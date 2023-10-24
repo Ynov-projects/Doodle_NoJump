@@ -25,7 +25,8 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
 
-        //On met la local scale dans le sens du déplacement du personnage
+        // On met la local scale dans le sens du déplacement du personnage
+        // Permet de mettre le sprite dans le sens de la marche du personnage
         transform.localScale = rb.velocity.x <= -0.3f ? new Vector3(-1, 1, 1) : (rb.velocity.x >= 0.3f) ? new Vector3(1, 1, 1) : transform.localScale;
 
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
