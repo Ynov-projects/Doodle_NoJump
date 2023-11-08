@@ -8,4 +8,4 @@ PhysicsMaterial2D:
   m_PrefabAsset: {fileID: 0}
   m_Name: Bounce_trampoline
   friction: 0
-  bounciness: 0.965
+  bounciness: 0.9
