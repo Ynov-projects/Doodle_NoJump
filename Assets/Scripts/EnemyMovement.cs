@@ -22,8 +22,6 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         Vector2 dir = destination.position - enemy.position;
-        Debug.Log(dir);
-        Debug.Log("index : " + index);
         enemy.Translate(dir.normalized * Speed * Time.deltaTime, Space.World);
 
         if (Vector2.Distance(enemy.position, destination.position) < 0.3f)
