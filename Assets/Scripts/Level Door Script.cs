@@ -14,6 +14,9 @@ public class LevelDoorScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GoToNextLevel();
+        if (collision.tag == "Player")
+        {
+            GoToNextLevel();
+        }
     }
 }
