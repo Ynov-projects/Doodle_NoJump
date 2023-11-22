@@ -1,16 +1,18 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ElevatorMovement : MonoBehaviour
 {
 
-    public Transform[] checkpoints;
-    int index = 0;
+    [SerializeField] private Transform[] checkpoints;
+    private int index = 0;
+    private Transform destination;
 
-    Transform destination;
-    public GameObject elevator;
-    Rigidbody2D rb;
+    [SerializeField] private GameObject elevator;
+    private Rigidbody2D rb;
 
-    public float Speed;
+    [SerializeField] private float Speed;
+    public bool active;
 
     void Start()
     {
@@ -20,20 +22,26 @@ public class ElevatorMovement : MonoBehaviour
 
     void Update()
     {
+        float distance = Vector2.Distance(elevator.transform.position, destination.position);
         float y = destination.position.y - elevator.transform.position.y;
-        if(y > 0)
+        if (y > 0 && active)
         {
             rb.velocity = Vector2.up * Speed;
-        }else if(y < 0)
+        }
+        else if (y < 0 && active)
         {
             rb.velocity = Vector2.down * Speed;
         }
 
-        if (Vector2.Distance(elevator.transform.position, destination.position) < 0.3f)
+        if (distance < 0.3f)
         {
             index = (index + 1) % checkpoints.Length;
             destination = checkpoints[index];
             elevator.transform.localScale = new Vector2(-elevator.transform.localScale.x, elevator.transform.localScale.y);
+        }
+        else
+        {
+
         }
     }
 }

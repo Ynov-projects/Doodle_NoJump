@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Finish_context : MonoBehaviour
+public class FinishContext : MonoBehaviour
 {
     void Update()
     {
