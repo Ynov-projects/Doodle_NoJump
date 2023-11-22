@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Text_Writing : MonoBehaviour
+public class TextWriting : MonoBehaviour
 {
     [TextArea]
     public string text_to_write;

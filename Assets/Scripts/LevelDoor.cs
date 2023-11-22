@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelDoorScript : MonoBehaviour
+public class LevelDoor: MonoBehaviour
 {
     public string NameScene;
 
