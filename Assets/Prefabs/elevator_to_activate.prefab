@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7112243093892102142}
   m_Layer: 0
-  m_Name: elevator_to_activate
+  m_Name: Elevator_to_activate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
