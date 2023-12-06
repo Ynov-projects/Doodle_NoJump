@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     private Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
+    private float verticalMovement;
 
     public Animator animator;
 
@@ -38,10 +39,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     { 
-        MovePlayer(horizontalMovement);
+        MovePlayer(horizontalMovement, verticalMovement);
     }
 
-    void MovePlayer(float _horizontalMovement)
+    void MovePlayer(float _horizontalMovement, float _verticalMovement)
     {
         Vector3 targetVelocity = Vector3.zero;
         if (isClimbing)
