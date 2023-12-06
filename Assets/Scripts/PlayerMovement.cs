@@ -39,7 +39,8 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer(float _horizontalMovement)
     {
+        rb.AddForce(Physics.gravity * Time.deltaTime * 100);
         Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .001f);
+        rb.velocity = Vector3.Lerp(rb.velocity, targetVelocity, 0.1f);
     }
 }
