@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 8246842869255581858}
   - component: {fileID: 7122658967393832302}
   m_Layer: 0
-  m_Name: elevator
+  m_Name: Elevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
