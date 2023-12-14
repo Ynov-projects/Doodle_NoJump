@@ -5,9 +5,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
+    public float climbSpeed;
+    public bool isClimbing;
+
     public Rigidbody2D rb;
     private Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
+    private float verticalMovement;
 
     public Animator animator;
 
@@ -24,8 +28,9 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+        verticalMovement = Input.GetAxis("Vertical") * climbSpeed * Time.fixedDeltaTime;
 
-        // On met la local scale dans le sens du déplacement du personnage
+        // On met la local scale dans le sens du dï¿½placement du personnage
         // Permet de mettre le sprite dans le sens de la marche du personnage
         transform.localScale = rb.velocity.x <= -0.3f ? new Vector3(-1, 1, 1) : (rb.velocity.x >= 0.3f) ? new Vector3(1, 1, 1) : transform.localScale;
 
@@ -34,13 +39,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     { 
-        MovePlayer(horizontalMovement);
+        MovePlayer(horizontalMovement, verticalMovement);
     }
 
-    void MovePlayer(float _horizontalMovement)
+    void MovePlayer(float _horizontalMovement, float _verticalMovement)
     {
-        rb.AddForce(Physics.gravity * Time.deltaTime * 100);
-        Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
+        Vector3 targetVelocity = Vector3.zero;
+        if (isClimbing)
+        {
+            targetVelocity = new Vector2(0, _verticalMovement);
+        }
+        else
+        {
+            rb.AddForce(Physics.gravity * Time.deltaTime * 100);
+            targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
+        }
         rb.velocity = Vector3.Lerp(rb.velocity, targetVelocity, 0.1f);
     }
 }
