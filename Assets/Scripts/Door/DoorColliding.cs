@@ -4,9 +4,11 @@ public class DoorColliding : MonoBehaviour
 {
     [SerializeField] private Item key;
 
+    [SerializeField] private int numberOfItems;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(key.Quantity > 0)
+        if(key.Quantity >= numberOfItems)
         {
             key.Quantity--;
             gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
