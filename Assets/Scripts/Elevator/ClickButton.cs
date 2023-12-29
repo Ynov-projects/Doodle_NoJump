@@ -1,23 +1,24 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ClickButton : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private GameObject elevator;
+    [SerializeField] private UnityEvent activate;
+    [SerializeField] private UnityEvent desactivate;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.tag);
         animator.SetBool("pressed", true);
-        elevator.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.yellow;
         gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
-        elevator.GetComponent<ElevatorMovement>().active = true;
+        activate.Invoke();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         animator.SetBool("pressed", false);
-        elevator.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.blue;
         gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-        elevator.GetComponent<ElevatorMovement>().active = false;
+        desactivate.Invoke();
     }
 }

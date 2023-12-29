@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3504251718654416797}
   m_Layer: 6
   m_Name: RightLeg
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 3407948622707649816}
   m_Layer: 6
   m_Name: LeftLeg
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -442,7 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   maxHealth: 3
-  playerSr: {fileID: 6799258402729729162}
+  deathPanel: {fileID: 0}
 --- !u!114 &7308524275192354117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,12 +455,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50cc6945bd79504c808f7e7df18b44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  maxHealth: 3
   emptyHeart: {fileID: 1594844002, guid: 8f4bf498204aa044e8a0ef58f2c88396, type: 3}
   fullHeart: {fileID: -2140787634, guid: 8f4bf498204aa044e8a0ef58f2c88396, type: 3}
   hearts:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  shieldDisplay: {fileID: 0}
   playerHealth: {fileID: 2944218664975853274}

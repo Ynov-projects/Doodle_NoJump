@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c107e6f3de4fb0947a253ec67fb64808
+guid: 63548c4085345534d9c8928de20a0363
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,76 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: item-ryan_0
+      name: autel_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 16
-        width: 5
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46b34e3f4620ae448a2a1c66c93d00bd
-      internalID: -542338140
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: item-ryan_1
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 16
-        width: 4
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cbbb793712468f34498ee1b979165ca8
-      internalID: -1348058834
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: item-ryan_2
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 0
-        width: 5
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67672fbae3c365f42b60279822b9abdf
-      internalID: -1313357592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: item-ryan_3
-      rect:
-        serializedVersion: 2
-        x: 18
+        x: 2
         y: 0
         width: 12
-        height: 7
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2370490e643e4f146a01b6c8b1f4d950
-      internalID: -672780887
+      spriteID: 3cfcb73bfa14c9847b57e2cda89b7e0f
+      internalID: 1564365849
       vertices: []
       indices: 
       edges: []
@@ -204,10 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      item-ryan_0: -542338140
-      item-ryan_1: -1348058834
-      item-ryan_2: -1313357592
-      item-ryan_3: -672780887
+      autel_0: 1564365849
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
