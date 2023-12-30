@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour
 {
-    public int health;
-    public int maxHealth;
-
     public Sprite emptyHeart;
     public Sprite fullHeart;
     public Image[] hearts;
+
+    [SerializeField] private TextMeshProUGUI shieldDisplay;
 
     public PlayerHealth playerHealth;
 
@@ -26,31 +26,20 @@ public class HealthDisplay : MonoBehaviour
     void Start()
     {
         ChangeHealth();
+        ChangeShield();
+    }
+
+    public void ChangeShield()
+    {
+        shieldDisplay.text = "x " + playerHealth.getNbShield();
     }
 
     public void ChangeHealth()
     {
-        health = playerHealth.health;
-        maxHealth = playerHealth.maxHealth;
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < health)
-            {
-                hearts[i].sprite = fullHeart;
-            }
-            else
-            {
-                hearts[i].sprite = emptyHeart;
-            }
-
-            if (i < maxHealth)
-            {
-                hearts[i].enabled = true;
-            }
-            else
-            {
-                hearts[i].enabled = false;
-            }
+            hearts[i].sprite = i < playerHealth.health ? fullHeart : emptyHeart;
+            hearts[i].enabled = i < playerHealth.maxHealth;
         }
     }
 }

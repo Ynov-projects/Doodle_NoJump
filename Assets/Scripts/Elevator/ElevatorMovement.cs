@@ -12,7 +12,7 @@ public class ElevatorMovement : MonoBehaviour
     private Rigidbody2D rb;
 
     [SerializeField] private float Speed;
-    public bool active;
+    private bool active;
 
     void Start()
     {
@@ -43,5 +43,17 @@ public class ElevatorMovement : MonoBehaviour
         {
 
         }
+    }
+
+    public void activate()
+    {
+        active = true;
+        elevator.GetComponent<SpriteRenderer>().color = Color.yellow;
+    }
+
+    public void desactivate()
+    {
+        active = false;
+        elevator.GetComponent<SpriteRenderer>().color = Color.blue;
     }
 }
