@@ -9,7 +9,6 @@ public class ClickButton : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.tag);
         animator.SetBool("pressed", true);
         gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
         activate.Invoke();

@@ -1,59 +1,41 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ElevatorMovement : MonoBehaviour
 {
-
-    [SerializeField] private Transform[] checkpoints;
-    private int index = 0;
-    private Transform destination;
-
+    [SerializeField] private Transform _startPos;
+    [SerializeField] private Transform _endPos;
     [SerializeField] private GameObject elevator;
-    private Rigidbody2D rb;
 
-    [SerializeField] private float Speed;
+    [SerializeField] private float _speed;
     private bool active;
-
-    void Start()
-    {
-        destination = checkpoints[index];
-        rb = elevator.GetComponent<Rigidbody2D>();
-    }
+    [SerializeField] private bool toActivate;
 
     void Update()
     {
-        float distance = Vector2.Distance(elevator.transform.position, destination.position);
-        float y = destination.position.y - elevator.transform.position.y;
-        if (y > 0 && active)
+        if (toActivate && active || !toActivate)
         {
-            rb.velocity = Vector2.up * Speed;
-        }
-        else if (y < 0 && active)
-        {
-            rb.velocity = Vector2.down * Speed;
-        }
-
-        if (distance < 0.3f)
-        {
-            index = (index + 1) % checkpoints.Length;
-            destination = checkpoints[index];
-            elevator.transform.localScale = new Vector2(-elevator.transform.localScale.x, elevator.transform.localScale.y);
-        }
-        else
-        {
-
+            elevator.transform.position = Vector3.Lerp(
+                _startPos.position,
+                _endPos.position,
+                Mathf.PingPong(Time.time / _speed, 1));
         }
     }
 
     public void activate()
     {
-        active = true;
-        elevator.GetComponent<SpriteRenderer>().color = Color.yellow;
+        if (toActivate)
+        {
+            active = true;
+            elevator.GetComponent<SpriteRenderer>().color = Color.yellow;
+        }
     }
 
     public void desactivate()
     {
-        active = false;
-        elevator.GetComponent<SpriteRenderer>().color = Color.blue;
+        if (toActivate)
+        {
+            active = false;
+            elevator.GetComponent<SpriteRenderer>().color = Color.blue;
+        }
     }
 }
