@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3553352870515722626}
   - component: {fileID: 4300225324964514833}
   - component: {fileID: 4454295242674611249}
+  - component: {fileID: 3265431229987564804}
   m_Layer: 0
   m_Name: trampoline
   m_TagString: Untagged
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -672780887, guid: c107e6f3de4fb0947a253ec67fb64808, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -159,6 +160,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3265431229987564804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559060932041357658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5575bce6a3dbaee468f57958b48becfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceTrampoline: {fileID: 8438580003271697589}
+  toActivate: 1
 --- !u!1 &8438580003271697589
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9188844264521926729
 Transform:
   m_ObjectHideFlags: 0
