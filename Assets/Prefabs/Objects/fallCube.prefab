@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3499541821850215128}
   - component: {fileID: 7883038329618658529}
   - component: {fileID: 1001549573712940225}
+  - component: {fileID: 2243933670014898807}
   m_Layer: 0
   m_Name: fallCube
   m_TagString: fallCube
@@ -158,3 +159,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2243933670014898807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618159282438378271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bcb1f531061fdd4ebc7a552c7195f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallCube: {fileID: 618159282438378271}
