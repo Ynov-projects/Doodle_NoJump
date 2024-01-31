@@ -10,18 +10,24 @@ public class ClickButton : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        numberOfItemsColliding++;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
-        activate.Invoke();
+        if (collision.gameObject.tag != "elevator")
+        {
+            numberOfItemsColliding++;
+            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            activate.Invoke();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        numberOfItemsColliding--;
-        if (numberOfItemsColliding == 0 && !permanent)
+        if (collision.gameObject.tag != "elevator")
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-            desactivate.Invoke();
+            numberOfItemsColliding--;
+            if (numberOfItemsColliding == 0 && !permanent)
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+                desactivate.Invoke();
+            }
         }
     }
 }
