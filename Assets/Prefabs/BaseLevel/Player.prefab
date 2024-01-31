@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3504251718654416797}
   m_Layer: 6
   m_Name: RightLeg
-  m_TagString: Player
+  m_TagString: LegPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 3407948622707649816}
   m_Layer: 6
   m_Name: LeftLeg
-  m_TagString: Player
+  m_TagString: LegPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

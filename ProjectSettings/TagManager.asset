@@ -7,6 +7,7 @@ TagManager:
   - elevator
   - fallCube
   - Cube
+  - LegPlayer
   layers:
   - Default
   - TransparentFX

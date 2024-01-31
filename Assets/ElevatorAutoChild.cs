@@ -6,11 +6,19 @@ public class ElevatorAutoChild : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.transform.parent.parent = transform;
+        if (collision.transform.parent != transform)
+        {
+            if (collision.tag == "LegPlayer") collision.transform.parent.parent = transform;
+            else collision.transform.parent = transform;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collision.transform.parent.parent = null;
+        if (collision.transform.parent != transform)
+        {
+            if (collision.tag == "LegPlayer") collision.transform.parent.parent = null;
+            else collision.transform.parent = null;
+        }
     }
 }
