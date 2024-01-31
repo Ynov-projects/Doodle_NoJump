@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,14 @@ public class FallOutZone : MonoBehaviour
         {
             fallCube.transform.position = spawnPoint;
             fallCube.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            try
+            {
+                fallCube.gameObject.GetComponent<ButtonFallCube>().enabled = true;
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
         }
     }
 }
