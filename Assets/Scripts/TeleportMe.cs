@@ -1,12 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TeleportMe : MonoBehaviour
 {
     [SerializeField] private GameObject teleportPosition;
+    [SerializeField] private GameObject level;
 
     private bool isInTeleporter;
+    [SerializeField] private bool isLevel;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,7 +18,11 @@ public class TeleportMe : MonoBehaviour
     IEnumerator Teleport(GameObject collision)
     {
         yield return new WaitForSeconds(2f);
-        if(isInTeleporter) collision.transform.position = teleportPosition.transform.position;
+        if (isInTeleporter)
+        {
+            collision.transform.position = teleportPosition.transform.position;
+            if (isLevel) level.SetActive(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

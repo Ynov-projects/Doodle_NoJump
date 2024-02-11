@@ -8,6 +8,7 @@ TagManager:
   - fallCube
   - Cube
   - LegPlayer
+  - Level
   layers:
   - Default
   - TransparentFX
