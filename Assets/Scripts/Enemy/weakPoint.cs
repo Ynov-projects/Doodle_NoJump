@@ -9,6 +9,10 @@ public class WeakPoint : MonoBehaviour
     {
         enemy.enabled = false;
         Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
+        if(collision.tag == "LegPlayer")
+        {
+            rb = collision.transform.parent.GetComponent<Rigidbody2D>();
+        }
         Vector3 targetVelocity = new Vector2(bounceOnCollision, rb.velocity.y);
         Vector3 velocity = Vector3.zero;
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .001f);
