@@ -38,4 +38,11 @@ public class ElevatorMovement : MonoBehaviour
             elevator.GetComponent<SpriteRenderer>().color = Color.blue;
         }
     }
+
+    public void changePermanantState()
+    {
+        if (!active) activate();
+        else desactivate();
+        
+    }
 }
