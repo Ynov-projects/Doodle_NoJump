@@ -11,7 +11,7 @@ public class BlockColliding : MonoBehaviour
         if ((collision.tag == "Player" || collision.tag == "LegPlayer") && item.Quantity >= numberOfItems)
         {
             item.Quantity -= numberOfItems;
-            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            gameObject.GetComponent<SpriteRenderer>().color = GameManager.activeColor;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         }

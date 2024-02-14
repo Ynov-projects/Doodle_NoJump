@@ -26,7 +26,7 @@ public class ElevatorMovement : MonoBehaviour
         if (toActivate)
         {
             active = true;
-            elevator.GetComponent<SpriteRenderer>().color = Color.yellow;
+            elevator.GetComponent<SpriteRenderer>().color = GameManager.activeColor;
         }
     }
 
@@ -35,7 +35,7 @@ public class ElevatorMovement : MonoBehaviour
         if (toActivate)
         {
             active = false;
-            elevator.GetComponent<SpriteRenderer>().color = Color.blue;
+            elevator.GetComponent<SpriteRenderer>().color = GameManager.inactiveColor;
         }
     }
 

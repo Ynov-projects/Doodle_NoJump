@@ -15,7 +15,7 @@ public class TrampolineScript : MonoBehaviour
     {
         if (toActivate)
         {
-            GetComponent<SpriteRenderer>().color = Color.yellow;
+            GetComponent<SpriteRenderer>().color = GameManager.activeColor;
             bounceTrampoline.SetActive(true);
         }
     }
@@ -24,7 +24,7 @@ public class TrampolineScript : MonoBehaviour
     {
         if (toActivate)
         {
-            GetComponent<SpriteRenderer>().color = Color.blue;
+            GetComponent<SpriteRenderer>().color = GameManager.inactiveColor;
             bounceTrampoline.SetActive(false);
         }
     }

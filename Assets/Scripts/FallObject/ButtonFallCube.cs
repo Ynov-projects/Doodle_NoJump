@@ -6,7 +6,7 @@ public class ButtonFallCube : MonoBehaviour
 
     public void activate()
     {
-        GetComponent<SpriteRenderer>().color = Color.yellow;
+        GetComponent<SpriteRenderer>().color = GameManager.activeColor;
         fallCube.GetComponent<Rigidbody2D>().gravityScale = 5.0f;
     }
 
