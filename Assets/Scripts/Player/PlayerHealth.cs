@@ -48,12 +48,16 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        int stayingShields = nbShields - amount < 0 ? 0 : nbShields - amount;
-        amount = amount - nbShields < 0 ? 0 : amount - nbShields;
-        nbShields = stayingShields;
-
-        health -= amount;
-        UpdateLife();
+        if (nbShields > 0)
+        {
+            nbShields--;
+            HealthDisplay.instance.ChangeShield();
+        }
+        else
+        {
+            health -= amount;
+            UpdateLife();
+        }
     }
 
     private void UpdateLife()
