@@ -10,8 +10,6 @@ public class HealthDisplay : MonoBehaviour
     public Sprite fullHeart;
     public Image[] hearts;
 
-    [SerializeField] private TextMeshProUGUI shieldDisplay;
-
     public PlayerHealth playerHealth;
 
     public static HealthDisplay instance;
@@ -26,12 +24,6 @@ public class HealthDisplay : MonoBehaviour
     void Start()
     {
         ChangeHealth();
-        ChangeShield();
-    }
-
-    public void ChangeShield()
-    {
-        shieldDisplay.text = "x " + playerHealth.getNbShield();
     }
 
     public void ChangeHealth()

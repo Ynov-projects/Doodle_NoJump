@@ -1,32 +1,46 @@
-using System.Collections;
 using UnityEngine;
 
 public class TeleportMe : MonoBehaviour
 {
     [SerializeField] private GameObject teleportPosition;
-    [SerializeField] private GameObject level;
 
     private bool isInTeleporter;
-    [SerializeField] private bool isLevel;
+
+    private GameObject toTeleport;
+
+    [SerializeField] private Animator animator;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && isInTeleporter)
+        {
+            animator.SetBool("isInTeleporter", true);
+            if (toTeleport.tag == "Player") toTeleport.GetComponent<PlayerMovement>().enabled = false;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isInTeleporter = true;
-        StartCoroutine(Teleport(collision.gameObject));
+        if (collision.tag == "Player")
+        {
+            isInTeleporter = true;
+            toTeleport = collision.gameObject;
+        }
     }
 
-    IEnumerator Teleport(GameObject collision)
+    public void Teleport()
     {
-        yield return new WaitForSeconds(2f);
-        if (isInTeleporter)
-        {
-            collision.transform.position = teleportPosition.transform.position;
-            if (isLevel) level.SetActive(true);
-        }
+        toTeleport.GetComponent<PlayerMovement>().enabled = true;
+        toTeleport.transform.position = teleportPosition.transform.position;
+        animator.SetBool("isInTeleporter", false);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isInTeleporter = false;
+        if (collision.tag == "Player")
+        {
+            isInTeleporter = false;
+            animator.SetBool("isInTeleporter", false);
+        }
     }
 }
