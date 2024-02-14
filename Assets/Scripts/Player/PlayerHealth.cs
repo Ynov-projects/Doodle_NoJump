@@ -5,8 +5,6 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     public int maxHealth = 10;
 
-    private int nbShields = 0;
-
     public static PlayerHealth Instance;
     [SerializeField] private GameObject deathPanel;
 
@@ -19,11 +17,6 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = maxHealth;
-    }
-
-    public int getNbShield()
-    {
-        return nbShields;
     }
 
     private void Update()
@@ -40,24 +33,10 @@ public class PlayerHealth : MonoBehaviour
         UpdateLife();
     }
 
-    public void GetShield(int amount)
-    {
-        nbShields += amount;
-        HealthDisplay.instance.ChangeShield();
-    }
-
     public void TakeDamage(int amount)
     {
-        if (nbShields > 0)
-        {
-            nbShields--;
-            HealthDisplay.instance.ChangeShield();
-        }
-        else
-        {
-            health -= amount;
-            UpdateLife();
-        }
+        health -= amount;
+        UpdateLife();
     }
 
     private void UpdateLife()
