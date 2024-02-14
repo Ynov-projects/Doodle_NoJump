@@ -8,7 +8,7 @@ public class BlockColliding : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (item.Quantity >= numberOfItems)
+        if ((collision.tag == "Player" || collision.tag == "LegPlayer") && item.Quantity >= numberOfItems)
         {
             item.Quantity -= numberOfItems;
             gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
