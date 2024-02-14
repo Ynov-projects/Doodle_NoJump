@@ -10,8 +10,6 @@ public class HealthDisplay : MonoBehaviour
     public Sprite fullHeart;
     public Image[] hearts;
 
-    [SerializeField] private TextMeshProUGUI shieldDisplay;
-
     public PlayerHealth playerHealth;
 
     public static HealthDisplay instance;
@@ -22,18 +20,10 @@ public class HealthDisplay : MonoBehaviour
         else instance = this;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         ChangeHealth();
-        ChangeShield();
     }
-
-    public void ChangeShield()
-    {
-        shieldDisplay.text = "x " + playerHealth.getNbShield();
-    }
-
     public void ChangeHealth()
     {
         for (int i = 0; i < hearts.Length; i++)
