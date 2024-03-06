@@ -289,8 +289,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7c3118e0cf89142afacd76773973f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startPos: {fileID: 2064586125740314263}
-  _endPos: {fileID: 6844014420883503268}
+  checkpoints:
+  - {fileID: 2064586125740314263}
+  - {fileID: 6844014420883503268}
   elevator: {fileID: 38350898294553443}
   _speed: 2
   toActivate: 0

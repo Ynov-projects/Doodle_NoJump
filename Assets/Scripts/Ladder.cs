@@ -12,13 +12,13 @@ public class Ladder : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetAxis("Horizontal") > 0.3f)
+        if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.3f)
         {
             playerMovement.isClimbing = false;
             return;
         }
 
-        if (isInRange && Input.GetKeyDown(KeyCode.DownArrow) || isInRange && Input.GetAxis("Vertical") > 0.1f)
+        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f)
         {
             playerMovement.isClimbing = true;
         }
