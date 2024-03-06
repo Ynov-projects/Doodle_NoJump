@@ -13,7 +13,7 @@ public class ClickButton : MonoBehaviour
         if (collision.gameObject.tag != "elevator")
         {
             numberOfItemsColliding++;
-            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            gameObject.GetComponent<SpriteRenderer>().color = GameManager.activeColor;
             activate.Invoke();
         }
     }
@@ -25,7 +25,7 @@ public class ClickButton : MonoBehaviour
             numberOfItemsColliding--;
             if (numberOfItemsColliding == 0 && !permanent)
             {
-                gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+                gameObject.GetComponent<SpriteRenderer>().color = GameManager.inactiveColor;
                 desactivate.Invoke();
             }
         }
