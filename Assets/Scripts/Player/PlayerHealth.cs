@@ -18,7 +18,6 @@ public class PlayerHealth : MonoBehaviour
     {
         health = maxHealth;
     }
-
     public void GetLife(int amount)
     {
         health += amount;

@@ -20,12 +20,10 @@ public class HealthDisplay : MonoBehaviour
         else instance = this;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         ChangeHealth();
     }
-
     public void ChangeHealth()
     {
         for (int i = 0; i < hearts.Length; i++)
