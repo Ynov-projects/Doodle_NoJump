@@ -19,14 +19,6 @@ public class PlayerHealth : MonoBehaviour
         health = maxHealth;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            TakeDamage(1);
-        }
-    }
-
     public void GetLife(int amount)
     {
         health += amount;
