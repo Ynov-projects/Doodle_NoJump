@@ -11626,6 +11626,7 @@ Transform:
   - {fileID: 5287395256961345156}
   - {fileID: 1758340313590563563}
   - {fileID: 5192939236550866204}
+  - {fileID: 920192448992048035}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8131325615434148837
@@ -39702,6 +39703,68 @@ PolygonCollider2D:
       - {x: 4, y: -3}
       - {x: 3.0019302, y: -1.9988909}
   m_UseDelaunayMesh: 0
+--- !u!1001 &203554033958089551
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2082731435270988037}
+    m_Modifications:
+    - target: {fileID: 1015004781414023404, guid: 649b04b707433664fa198e6cc41c7061, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -373
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015004781414023404, guid: 649b04b707433664fa198e6cc41c7061, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -111
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015004781414023404, guid: 649b04b707433664fa198e6cc41c7061, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015004781414023404, guid: 649b04b707433664fa198e6cc41c7061, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015004781414023404, guid: 649b04b707433664fa198e6cc41c7061, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015004781414023404, guid: 649b04b707433664fa198e6cc41c7061, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015004781414023404, guid: 649b04b707433664fa198e6cc41c7061, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015004781414023404, guid: 649b04b707433664fa198e6cc41c7061, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015004781414023404, guid: 649b04b707433664fa198e6cc41c7061, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015004781414023404, guid: 649b04b707433664fa198e6cc41c7061, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524716629012208894, guid: 649b04b707433664fa198e6cc41c7061, type: 3}
+      propertyPath: m_Name
+      value: Fruit
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 649b04b707433664fa198e6cc41c7061, type: 3}
+--- !u!4 &920192448992048035 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1015004781414023404, guid: 649b04b707433664fa198e6cc41c7061, type: 3}
+  m_PrefabInstance: {fileID: 203554033958089551}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2896905858319805654
 PrefabInstance:
   m_ObjectHideFlags: 0

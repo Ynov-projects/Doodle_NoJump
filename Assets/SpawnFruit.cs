@@ -1,18 +1,25 @@
+using System.Collections;
 using UnityEngine;
 
 public class SpawnFruit : MonoBehaviour
 {
     [SerializeField] private GameObject fruit;
+    [SerializeField] private float timeForSpawn;
 
     public void Spawn()
     {
-        try
+        if (fruit != null)
         {
-            fruit.SetActive(true);
+            StartCoroutine(makeHimSpawn());
         }
-        catch (System.Exception e)
-        {
-            Debug.Log("Il n'y a pas de fruit dans la scène");
-        }
+    }
+
+    private IEnumerator makeHimSpawn()
+    {
+        yield return new WaitForSeconds(timeForSpawn);
+        fruit.SetActive(true);
+
+        if (fruit.GetComponentInChildren<ParticleSystem>() != null)
+            fruit.GetComponentInChildren<ParticleSystem>().Play();
     }
 }
