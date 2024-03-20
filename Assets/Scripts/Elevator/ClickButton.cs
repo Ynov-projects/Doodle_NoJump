@@ -8,26 +8,41 @@ public class ClickButton : MonoBehaviour
     private int numberOfItemsColliding;
     [SerializeField] private bool permanent;
 
+    [SerializeField] private bool switchable;
+    private bool activated;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "elevator")
+        if (collision.gameObject.tag != "elevator" && collision.gameObject.tag != "LegPlayer")
         {
             numberOfItemsColliding++;
-            gameObject.GetComponent<SpriteRenderer>().color = GameManager.activeColor;
-            activate.Invoke();
+            if (!activated)
+                activateEvents();
+            else
+                desactivateEvents();
+            activated = switchable ? !activated : false;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "elevator")
+        if (collision.gameObject.tag != "elevator" && collision.gameObject.tag != "LegPlayer")
         {
             numberOfItemsColliding--;
-            if (numberOfItemsColliding == 0 && !permanent)
-            {
-                gameObject.GetComponent<SpriteRenderer>().color = GameManager.inactiveColor;
-                desactivate.Invoke();
-            }
+            if (numberOfItemsColliding == 0 && !permanent && !switchable)
+                desactivateEvents();
         }
+    }
+
+    private void activateEvents()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = GameManager.activeColor;
+        activate.Invoke();
+    }
+
+    private void desactivateEvents()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = GameManager.inactiveColor;
+        desactivate.Invoke();
     }
 }
