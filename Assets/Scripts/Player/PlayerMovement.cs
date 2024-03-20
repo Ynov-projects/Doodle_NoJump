@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private int collidings;
 
     public static PlayerMovement instance;
+
+    public ParticleSystem ParticleSystem1, ParticleSystem2;
     private void Awake()
     {
         if (instance != null)
@@ -72,7 +74,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!collision.isTrigger) collidings++;
+        if (!collision.isTrigger)
+        {
+            if (collidings == 0)
+            {
+                ParticleSystem1.Play();
+                ParticleSystem2.Play();
+            }
+            collidings++;
+
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

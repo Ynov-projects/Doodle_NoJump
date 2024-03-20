@@ -30,8 +30,8 @@ public class DialogScript : MonoBehaviour
 
     private void ManageAnimation(bool activation)
     {
-        indication.SetActive(activation);
-        animator.SetBool("talking", activation);
+        if(indication != null) indication.SetActive(activation);
+        if (animator != null)  animator.SetBool("talking", activation);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,14 +48,20 @@ public class DialogScript : MonoBehaviour
 
     private void LaunchDialog()
     {
-        ManageAnimation(false);
-
-        dialogPanel.SetActive(true);
+        SwitchingState(true);
+        PlayerMovement.instance.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         dialogTextContent.text = "";
-
         dialogTextName.text = dialogName;
         char[] letters = dialogContent.ToCharArray();
         StartCoroutine(WriteDialog(letters));
+    }
+
+    // Permet d'activer ou non le dialogue
+    private void SwitchingState(bool state)
+    {
+        dialogPanel.SetActive(state);
+        ManageAnimation(!state);
+        PlayerMovement.instance.enabled = !state;
     }
 
     private IEnumerator WriteDialog(char[] letters)
@@ -71,13 +77,10 @@ public class DialogScript : MonoBehaviour
 
     private void StopDialog()
     {
-        ManageAnimation(true);
-     
+        SwitchingState(false);
         StopAllCoroutines();
 
-        dialogPanel.SetActive(false);
         dialogTextContent.text = "";
-
         dialogLaunched = false;
         endOfDialog.Invoke();
     }
