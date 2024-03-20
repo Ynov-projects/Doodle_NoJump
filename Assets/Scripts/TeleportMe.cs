@@ -16,7 +16,11 @@ public class TeleportMe : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && isInTeleporter)
         {
             animator.SetBool("isInTeleporter", true);
-            if (toTeleport.tag == "Player") toTeleport.GetComponent<PlayerMovement>().enabled = false;
+            if (toTeleport.tag == "Player")
+            {
+                toTeleport.GetComponent<PlayerMovement>().enabled = false;
+                toTeleport.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            }
         }
     }
 
