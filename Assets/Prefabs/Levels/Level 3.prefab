@@ -137,8 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7c3118e0cf89142afacd76773973f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startPos: {fileID: 2584245998951756084}
-  _endPos: {fileID: 7304435890297863155}
+  checkpoints: []
   elevator: {fileID: 2915417888506803154}
   _speed: 3.5
   toActivate: 0
@@ -1618,8 +1617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportPosition: {fileID: 5033821487475649158}
-  level: {fileID: 0}
-  isLevel: 0
+  animator: {fileID: 0}
 --- !u!1 &1698548033122845044
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,8 +1665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7c3118e0cf89142afacd76773973f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startPos: {fileID: 8943709046529786630}
-  _endPos: {fileID: 7277053791941342580}
+  checkpoints: []
   elevator: {fileID: 4043028875604032683}
   _speed: 5
   toActivate: 0
@@ -1875,6 +1872,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   permanent: 1
+  switchable: 0
 --- !u!60 &835310603081534772
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1971,8 +1969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7c3118e0cf89142afacd76773973f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startPos: {fileID: 8791418404895192549}
-  _endPos: {fileID: 3871258093845579574}
+  checkpoints: []
   elevator: {fileID: 6605250399333529288}
   _speed: 1
   toActivate: 1
@@ -2911,8 +2908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportPosition: {fileID: 3246437562573124314}
-  level: {fileID: 0}
-  isLevel: 0
+  animator: {fileID: 0}
 --- !u!1 &3081082166068340680
 GameObject:
   m_ObjectHideFlags: 0
@@ -3419,7 +3415,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 937975937, guid: 56c435e4f519c3a459b5d0814fa26c21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3891,6 +3887,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   permanent: 0
+  switchable: 0
 --- !u!60 &3488136066131365954
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10086,8 +10083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7c3118e0cf89142afacd76773973f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startPos: {fileID: 1241923491275277909}
-  _endPos: {fileID: 106526485750895762}
+  checkpoints: []
   elevator: {fileID: 5242268230834704217}
   _speed: 3.5
   toActivate: 1
@@ -10138,8 +10134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7c3118e0cf89142afacd76773973f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startPos: {fileID: 7976630543906941443}
-  _endPos: {fileID: 1503814390535382290}
+  checkpoints: []
   elevator: {fileID: 1915218071417556697}
   _speed: 2
   toActivate: 1
@@ -11462,6 +11457,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   permanent: 1
+  switchable: 0
 --- !u!60 &5190627018933650699
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11558,8 +11554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7c3118e0cf89142afacd76773973f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startPos: {fileID: 5654658675845243400}
-  _endPos: {fileID: 7960363197468003715}
+  checkpoints: []
   elevator: {fileID: 1251892348873667702}
   _speed: 3
   toActivate: 1
@@ -12363,6 +12358,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   permanent: 0
+  switchable: 0
 --- !u!60 &2771429727376012553
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -40079,8 +40075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7c3118e0cf89142afacd76773973f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startPos: {fileID: 5486893307188389015}
-  _endPos: {fileID: 3242578168311161022}
+  checkpoints: []
   elevator: {fileID: 8131325615434148837}
   _speed: 5
   toActivate: 0
@@ -40287,6 +40282,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   permanent: 0
+  switchable: 0
 --- !u!60 &3030860718095909329
 PolygonCollider2D:
   m_ObjectHideFlags: 0

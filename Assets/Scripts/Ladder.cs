@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Ladder : MonoBehaviour
 {
-    private bool isInRange = false;
     private PlayerMovement playerMovement;
+
+    [SerializeField] private GameObject indicationUpDown;
 
     void Awake()
     {
@@ -28,7 +29,7 @@ public class Ladder : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            isInRange = true;
+            indicationUpDown.SetActive(true);
         }
     }
 
@@ -36,7 +37,7 @@ public class Ladder : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            isInRange = false;
+            indicationUpDown.SetActive(false);
             playerMovement.isClimbing = false;
         }
     }

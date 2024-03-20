@@ -9,6 +9,7 @@ TagManager:
   - Cube
   - LegPlayer
   - Level
+  - startPosition
   layers:
   - Default
   - TransparentFX

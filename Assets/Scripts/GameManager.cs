@@ -20,7 +20,11 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            jumpPanel.SetActive(true);
+            try
+            {
+                jumpPanel.SetActive(true);
+            }
+            catch{}
         }
     }
 }
