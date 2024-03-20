@@ -7,6 +7,7 @@ public class TeleportMe : MonoBehaviour
     private bool isInTeleporter;
 
     private GameObject toTeleport;
+    [SerializeField] private GameObject indication;
 
     [SerializeField] private Animator animator;
 
@@ -23,8 +24,10 @@ public class TeleportMe : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            indication.SetActive(true);
             isInTeleporter = true;
             toTeleport = collision.gameObject;
+
         }
     }
 
@@ -39,6 +42,7 @@ public class TeleportMe : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            indication.SetActive(false);
             isInTeleporter = false;
             animator.SetBool("isInTeleporter", false);
         }
