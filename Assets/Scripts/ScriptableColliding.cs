@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ScriptableColliding : MonoBehaviour
 {
     [SerializeField] private Item scriptableItem;
+    [SerializeField] private UnityEvent destroyedEvent;
 
     private bool alreadyCollected;
 
@@ -12,6 +14,7 @@ public class ScriptableColliding : MonoBehaviour
         {
             alreadyCollected = true;
             GetComponent<Collider2D>().enabled = false;
+            if(destroyedEvent != null) destroyedEvent.Invoke();
             Destroy(gameObject);
             scriptableItem.Quantity++;
         }

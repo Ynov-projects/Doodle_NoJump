@@ -7,7 +7,7 @@ public class Checkpoint : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         indication.SetActive(false);
-        if (gameObject.GetComponent<CapsuleCollider2D>().enabled)
+        if (gameObject.GetComponent<CapsuleCollider2D>().enabled && collision.transform.tag == "Player")
         {
             gameObject.GetComponent<SpriteRenderer>().color = GameManager.activeColor;
             currentSceneManager.instance.spawnPoint = transform.position;
@@ -17,6 +17,7 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        indication.SetActive(true);
+        if (collision.transform.tag == "Player")
+            indication.SetActive(true);
     }
 }
