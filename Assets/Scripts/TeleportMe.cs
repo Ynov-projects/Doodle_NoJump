@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class TeleportMe : MonoBehaviour
@@ -11,15 +12,16 @@ public class TeleportMe : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
+    [SerializeField] private GameObject level;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && isInTeleporter)
         {
-            animator.SetBool("isInTeleporter", true);
+            animator.SetBool("readyToMove", true);
             if (toTeleport.tag == "Player")
             {
-                toTeleport.GetComponent<PlayerMovement>().enabled = false;
-                toTeleport.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                StartCoroutine(DesactivatePlayer());
             }
         }
     }
@@ -37,9 +39,11 @@ public class TeleportMe : MonoBehaviour
 
     public void Teleport()
     {
+        if(level != null) level.SetActive(true);
+
         toTeleport.GetComponent<PlayerMovement>().enabled = true;
         toTeleport.transform.position = teleportPosition.transform.position;
-        animator.SetBool("isInTeleporter", false);
+        animator.SetBool("readyToMove", false);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -48,7 +52,14 @@ public class TeleportMe : MonoBehaviour
         {
             indication.SetActive(false);
             isInTeleporter = false;
-            animator.SetBool("isInTeleporter", false);
+            animator.SetBool("readyToMove", false);
         }
+    }
+
+    private IEnumerator DesactivatePlayer()
+    {
+        toTeleport.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        yield return new WaitForEndOfFrame();
+        toTeleport.GetComponent<PlayerMovement>().enabled = false;
     }
 }

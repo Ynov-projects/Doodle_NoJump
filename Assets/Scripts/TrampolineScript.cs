@@ -6,6 +6,8 @@ public class TrampolineScript : MonoBehaviour
 
     [SerializeField] private bool toActivate;
 
+    [SerializeField] private Animator animator;
+
     private void Start()
     {
         bounceTrampoline.SetActive(!toActivate);
@@ -27,5 +29,15 @@ public class TrampolineScript : MonoBehaviour
             GetComponent<SpriteRenderer>().color = GameManager.inactiveColor;
             bounceTrampoline.SetActive(false);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.transform.tag == "Player") animator.SetBool("isOn", true);
+    }
+
+    public void isOff()
+    {
+        animator.SetBool("isOn", false);
     }
 }
