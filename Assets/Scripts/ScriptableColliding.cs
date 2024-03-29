@@ -17,6 +17,7 @@ public class ScriptableColliding : MonoBehaviour
             if(destroyedEvent != null) destroyedEvent.Invoke();
             Destroy(gameObject);
             scriptableItem.Quantity++;
+            UIManager.Instance.UpdateUI();
         }
     }
 }
