@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   object_name: Key
-  sprite: {fileID: -1923779314, guid: 2dd3dad0c835492419a0c4d8359fb89a, type: 3}
+  icon: {fileID: -1923779314, guid: 2dd3dad0c835492419a0c4d8359fb89a, type: 3}
   Quantity: 0
