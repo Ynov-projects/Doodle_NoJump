@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 16a8f53e6210a1e438cdbf0a4a2d6af0, type: 2}
   numberOfItems: 1
+  clip: {fileID: 8300000, guid: 1ec64b1022d16d04b92019fa2b47c1cb, type: 3}
 --- !u!70 &6819965506214034203
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
