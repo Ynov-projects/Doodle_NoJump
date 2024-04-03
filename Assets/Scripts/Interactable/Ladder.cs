@@ -2,33 +2,31 @@ using UnityEngine;
 
 public class Ladder : MonoBehaviour
 {
-    private PlayerMovement playerMovement;
-
     [SerializeField] private GameObject indicationUpDown;
 
-    void Awake()
-    {
-        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-    }
+    private bool isInTrigger;
 
     void Update()
     {
         if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.3f)
         {
-            playerMovement.isClimbing = false;
+            PlayerMovement.instance.isClimbing = false;
             return;
         }
 
-        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f)
+        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f && isInTrigger)
         {
-            playerMovement.isClimbing = true;
+            PlayerMovement.instance.isClimbing = true;
         }
+
+        if(!isInTrigger) PlayerMovement.instance.isClimbing = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("LegPlayer"))
         {
+            isInTrigger = true;
             indicationUpDown.SetActive(true);
         }
     }
@@ -38,7 +36,7 @@ public class Ladder : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             indicationUpDown.SetActive(false);
-            playerMovement.isClimbing = false;
+            isInTrigger = false;
         }
     }
 }
