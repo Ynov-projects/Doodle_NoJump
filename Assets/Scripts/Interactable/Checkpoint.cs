@@ -3,6 +3,7 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     [SerializeField] private GameObject indication;
+    [SerializeField] private AudioClip clip;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,6 +13,7 @@ public class Checkpoint : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().color = GameManager.activeColor;
             currentSceneManager.instance.spawnPoint = transform.position;
             gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            AudioManager.Instance.PlayClip(clip);
         }
     }
 
