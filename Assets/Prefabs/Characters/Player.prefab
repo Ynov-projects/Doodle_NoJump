@@ -10120,6 +10120,7 @@ MonoBehaviour:
   animator: {fileID: 9069023178259323002}
   ParticleSystem1: {fileID: 4696801454460782580}
   ParticleSystem2: {fileID: 112455465702123267}
+  clip: {fileID: 8300000, guid: 9131eb7950a3dda44ad037ee8cd35715, type: 3}
 --- !u!95 &9069023178259323002
 Animator:
   serializedVersion: 5

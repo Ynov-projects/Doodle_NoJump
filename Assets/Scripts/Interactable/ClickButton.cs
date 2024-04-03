@@ -10,6 +10,7 @@ public class ClickButton : MonoBehaviour
 
     [SerializeField] private bool switchable;
     private bool activated;
+    [SerializeField] private AudioClip clip;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,6 +22,7 @@ public class ClickButton : MonoBehaviour
             else
                 desactivateEvents();
             activated = switchable ? !activated : false;
+            AudioManager.Instance.PlayClip(clip);
         }
     }
 

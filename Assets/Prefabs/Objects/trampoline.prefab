@@ -177,6 +177,7 @@ MonoBehaviour:
   bounceTrampoline: {fileID: 8438580003271697589}
   toActivate: 0
   animator: {fileID: 919101782954613072}
+  clip: {fileID: 8300000, guid: 4069fb99f6c865047b1d181dd7a67cbc, type: 3}
 --- !u!70 &7704203523252715831
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

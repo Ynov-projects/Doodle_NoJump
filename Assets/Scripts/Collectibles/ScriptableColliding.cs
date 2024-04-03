@@ -5,6 +5,7 @@ public class ScriptableColliding : MonoBehaviour
 {
     [SerializeField] private Item scriptableItem;
     [SerializeField] private UnityEvent destroyedEvent;
+    [SerializeField] private AudioClip clip;
 
     private bool alreadyCollected;
 
@@ -16,6 +17,7 @@ public class ScriptableColliding : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             if(destroyedEvent != null) destroyedEvent.Invoke();
             Destroy(gameObject);
+            AudioManager.Instance.PlayClip(clip);
             scriptableItem.Quantity++;
             UIManager.Instance.UpdateUI();
         }

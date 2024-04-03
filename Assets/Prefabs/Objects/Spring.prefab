@@ -261,6 +261,7 @@ MonoBehaviour:
   bounceTrampoline: {fileID: 816742828599053262}
   toActivate: 0
   animator: {fileID: 4525131832858839262}
+  clip: {fileID: 8300000, guid: 16567a7e3316df24ea53543042658f20, type: 3}
 --- !u!95 &4525131832858839262
 Animator:
   serializedVersion: 5

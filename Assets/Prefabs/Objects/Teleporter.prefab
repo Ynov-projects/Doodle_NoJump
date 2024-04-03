@@ -95,6 +95,8 @@ MonoBehaviour:
   teleportPosition: {fileID: 0}
   indication: {fileID: 7901148016073809275}
   animator: {fileID: 2742378227818743812}
+  level: {fileID: 0}
+  clip: {fileID: 8300000, guid: 24ff9bb30a685ad4a9ac1deef9e3f44f, type: 3}
 --- !u!95 &2742378227818743812
 Animator:
   serializedVersion: 5
