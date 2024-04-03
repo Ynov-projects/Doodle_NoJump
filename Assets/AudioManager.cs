@@ -1,0 +1,20 @@
+using UnityEngine;
+
+public class AudioManager : MonoBehaviour
+{
+    [SerializeField] private AudioSource audioSource;
+
+    public static AudioManager Instance;
+
+    private void Awake()
+    {
+        if (Instance != null) Destroy(gameObject);
+        Instance = this;
+    }
+
+    public void PlayClip(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
+    }
+}
