@@ -14,13 +14,16 @@ public class TeleportMe : MonoBehaviour
 
     [SerializeField] private GameObject level;
 
+    [SerializeField] private AudioClip clip;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && isInTeleporter)
         {
-            animator.SetBool("readyToMove", true);
             if (toTeleport.tag == "Player")
             {
+                animator.SetBool("readyToMove", true);
+                AudioManager.Instance.PlayClip(clip);
                 StartCoroutine(DesactivatePlayer());
             }
         }
@@ -39,7 +42,7 @@ public class TeleportMe : MonoBehaviour
 
     public void Teleport()
     {
-        if(level != null) level.SetActive(true);
+        if (level != null) level.SetActive(true);
 
         toTeleport.GetComponent<PlayerMovement>().enabled = true;
         toTeleport.transform.position = teleportPosition.transform.position;
