@@ -5,6 +5,7 @@ public class LevelDoor: MonoBehaviour
 {
     private GameObject player;
     [SerializeField] private Animator animator;
+    [SerializeField] private AudioClip clip;
 
     private void DesactivateLevels()
     {
@@ -19,6 +20,7 @@ public class LevelDoor: MonoBehaviour
             PlayerMovement.instance.enabled = false;
             player = collision.gameObject;
             player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            AudioManager.Instance.PlayClip(clip);
         }
     }
 

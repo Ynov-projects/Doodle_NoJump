@@ -209,6 +209,8 @@ MonoBehaviour:
   teleportPosition: {fileID: 0}
   indication: {fileID: 115527290176006349}
   animator: {fileID: 6149376988525064799}
+  level: {fileID: 0}
+  clip: {fileID: 8300000, guid: cedecf695e64bd44a945306362d94dc6, type: 3}
 --- !u!70 &5063013193897621445
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -115,6 +115,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  clip: {fileID: 8300000, guid: ff57210629ce39d43b482b3eb6ec6ca9, type: 3}
 --- !u!58 &7224997180540288308
 CircleCollider2D:
   m_ObjectHideFlags: 0

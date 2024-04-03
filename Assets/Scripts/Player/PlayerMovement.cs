@@ -25,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement instance;
 
     public ParticleSystem ParticleSystem1, ParticleSystem2;
+    [SerializeField] private AudioClip clip;
+
+
+
     private void Awake()
     {
         if (instance != null)
@@ -80,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 ParticleSystem1.Play();
                 ParticleSystem2.Play();
+                AudioManager.Instance.PlayClip(clip);
             }
             collidings++;
 

@@ -362,3 +362,4 @@ MonoBehaviour:
   destroyedEvent:
     m_PersistentCalls:
       m_Calls: []
+  clip: {fileID: 8300000, guid: 02c425198d1484f43811443ef78931f0, type: 3}

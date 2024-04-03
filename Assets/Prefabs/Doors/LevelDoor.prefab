@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 296279349948541758}
+  clip: {fileID: 8300000, guid: cedecf695e64bd44a945306362d94dc6, type: 3}
 --- !u!95 &296279349948541758
 Animator:
   serializedVersion: 5
