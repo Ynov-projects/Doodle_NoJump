@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource soundSource;
+    [SerializeField] private AudioSource dialogSource;
 
     public static AudioManager Instance;
 
@@ -19,5 +20,16 @@ public class AudioManager : MonoBehaviour
             audioSource.clip = clip;
             audioSource.Play();
         }
+    }
+
+    public void PlayDialog(AudioClip dialog)
+    {
+        dialogSource.clip = dialog;
+        dialogSource.Play();
+    }
+
+    public void StopDialog()
+    {
+        dialogSource.Stop();
     }
 }

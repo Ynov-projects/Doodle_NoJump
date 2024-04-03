@@ -36,7 +36,8 @@ public class PlayerHealth : MonoBehaviour
         {
             PlayerMovement.instance.enabled = false;
             for (int i = 0; i < transform.childCount; i++)
-                transform.GetChild(i).GetComponent<BoxCollider2D>().enabled = false;
+                if(transform.GetChild(i).tag == "LegPlayer") transform.GetChild(i).GetComponent<BoxCollider2D>().enabled = false;
+
             transform.GetComponent<BoxCollider2D>().enabled = false;
             gameObject.SetActive(false);
 
