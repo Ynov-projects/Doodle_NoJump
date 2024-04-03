@@ -5,6 +5,7 @@ public class BlockColliding : MonoBehaviour
     [SerializeField] private Item item;
 
     [SerializeField] private int numberOfItems;
+    [SerializeField] private AudioClip clip;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,6 +16,7 @@ public class BlockColliding : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().color = GameManager.activeColor;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            AudioManager.Instance.PlayClip(clip);
         }
     }
 }

@@ -20,6 +20,8 @@ public class DialogScript : MonoBehaviour
 
     [SerializeField] private GameObject indication;
 
+    [SerializeField] private AudioClip dialog;
+
     [SerializeField] private Animator animator;
 
     void Update()
@@ -49,6 +51,7 @@ public class DialogScript : MonoBehaviour
     private void LaunchDialog()
     {
         SwitchingState(true);
+        AudioManager.Instance.PlayDialog(dialog);
         PlayerMovement.instance.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         dialogTextContent.text = "";
         dialogTextName.text = dialogName;
@@ -79,6 +82,7 @@ public class DialogScript : MonoBehaviour
     {
         SwitchingState(false);
         StopAllCoroutines();
+        AudioManager.Instance.StopDialog();
 
         dialogTextContent.text = "";
         dialogLaunched = false;
