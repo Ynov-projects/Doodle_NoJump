@@ -183,6 +183,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 6c23f6c9b4756c047b9492eef9864bfe, type: 2}
   numberOfItems: 1
   clip: {fileID: 8300000, guid: 1ec64b1022d16d04b92019fa2b47c1cb, type: 3}
+  canvas: {fileID: 6944824792030524651}
 --- !u!1 &3353748458159199158
 GameObject:
   m_ObjectHideFlags: 0
