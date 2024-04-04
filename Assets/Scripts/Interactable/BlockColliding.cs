@@ -7,6 +7,8 @@ public class BlockColliding : MonoBehaviour
     [SerializeField] private int numberOfItems;
     [SerializeField] private AudioClip clip;
 
+    [SerializeField] private GameObject canvas;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if ((collision.tag == "Player" || collision.tag == "LegPlayer") && item.Quantity >= numberOfItems)
@@ -17,6 +19,7 @@ public class BlockColliding : MonoBehaviour
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             AudioManager.Instance.PlayClip(clip);
+            if(canvas != null) canvas.SetActive(false);
         }
     }
 }

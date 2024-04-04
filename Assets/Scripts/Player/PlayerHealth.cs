@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
 
     public static PlayerHealth Instance;
     [SerializeField] private GameObject deathPanel;
+    [SerializeField] private GameObject lessLife;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount;
+        lessLife.SetActive(true);
         UpdateLife();
     }
 
