@@ -9,6 +9,8 @@ public class DialogScript : MonoBehaviour
     private bool isInRange;
     private bool dialogLaunched;
 
+    [SerializeField] private bool automaticLaunching;
+
     [SerializeField] private GameObject dialogPanel;
     [SerializeField] private TextMeshProUGUI dialogTextContent;
     [SerializeField] private TextMeshProUGUI dialogTextName;
@@ -26,33 +28,44 @@ public class DialogScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isInRange && !dialogLaunched) LaunchDialog();
+        if ((Input.GetKeyDown(KeyCode.E) || automaticLaunching) && isInRange && !dialogLaunched)
+        {
+            dialogLaunched = true;
+            LaunchDialog();
+        }
         if (Input.GetKeyDown(KeyCode.E) && dialogLaunched) StopDialog();
     }
 
     private void ManageAnimation(bool activation)
     {
-        if(indication != null) indication.SetActive(activation);
-        if (animator != null)  animator.SetBool("talking", activation);
+        if (indication != null) indication.SetActive(activation);
+        if (animator != null) animator.SetBool("talking", activation);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        ManageAnimation(true);
-        isInRange = true;
+        if (collision.tag == "Player" && collision.tag != "Untagged")
+        {
+            Debug.Log(collision.gameObject.name);
+            ManageAnimation(true);
+            isInRange = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        ManageAnimation(false);
-        isInRange = false;
+        if (collision.tag == "Player" && collision.tag != "Untagged")
+        {
+            ManageAnimation(false);
+            isInRange = false;
+        }
     }
 
     private void LaunchDialog()
     {
         SwitchingState(true);
         AudioManager.Instance.PlayDialog(dialog);
-        PlayerMovement.instance.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        if(!automaticLaunching) PlayerMovement.instance.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         dialogTextContent.text = "";
         dialogTextName.text = dialogName;
         char[] letters = dialogContent.ToCharArray();
@@ -72,7 +85,6 @@ public class DialogScript : MonoBehaviour
         while (letters.Length > 0)
         {
             yield return new WaitForSeconds(0.02f);
-            dialogLaunched = true;
             dialogTextContent.text += letters[0];
             letters = letters.Skip(1).ToArray();
         }
