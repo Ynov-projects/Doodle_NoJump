@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 735293819269527680}
   m_Layer: 0
   m_Name: Particle System
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10229,6 +10229,7 @@ MonoBehaviour:
   health: 3
   maxHealth: 3
   deathPanel: {fileID: 0}
+  lessLife: {fileID: 0}
 --- !u!114 &7308524275192354117
 MonoBehaviour:
   m_ObjectHideFlags: 0
