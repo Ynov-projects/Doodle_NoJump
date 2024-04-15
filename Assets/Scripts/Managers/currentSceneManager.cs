@@ -28,7 +28,6 @@ public class currentSceneManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape) && pauseMenu != null)
         {
-            Debug.Log("caca");
             pauseMenu.Pause();
             Time.timeScale = 0;
         }
