@@ -6,6 +6,7 @@ public class currentSceneManager : MonoBehaviour
 
     public static currentSceneManager instance;
     [SerializeField] private AudioClip clip;
+    [SerializeField] private PauseMenu pauseMenu;
 
     private void Awake()
     {
@@ -24,6 +25,11 @@ public class currentSceneManager : MonoBehaviour
         {
             PlayerMovement.instance.transform.position = spawnPoint;
             AudioManager.Instance.PlayClip(clip);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) && pauseMenu != null)
+        {
+            pauseMenu.Pause();
+            Time.timeScale = 0;
         }
     }
 }

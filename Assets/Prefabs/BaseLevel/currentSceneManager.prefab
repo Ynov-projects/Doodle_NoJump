@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9021953915466631642}
   - component: {fileID: 1178169626120079142}
+  - component: {fileID: 7836942283285999169}
   m_Layer: 0
   m_Name: currentSceneManager
   m_TagString: Untagged
@@ -46,3 +47,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0, z: 0}
   clip: {fileID: 8300000, guid: e0891b7e63550f64d8c6f167e8cbe910, type: 3}
+  pauseMenu: {fileID: 0}
+--- !u!114 &7836942283285999169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608961534281303922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6eda1c5cdcecf4ea0659c2a26b9de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _items:
+  - {fileID: 11400000, guid: 6c23f6c9b4756c047b9492eef9864bfe, type: 2}
+  - {fileID: 11400000, guid: 16a8f53e6210a1e438cdbf0a4a2d6af0, type: 2}
+  jumpPanel: {fileID: 0}
