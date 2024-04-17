@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TeleportMe : MonoBehaviour
 {
@@ -16,16 +17,13 @@ public class TeleportMe : MonoBehaviour
 
     [SerializeField] private AudioClip clip;
 
-    private void Update()
+    public void OnInteractInput(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.E) && isInTeleporter)
+        if (context.performed && isInTeleporter)
         {
-            if (toTeleport.tag == "Player")
-            {
-                animator.SetBool("readyToMove", true);
-                AudioManager.Instance.PlayClip(clip);
-                StartCoroutine(DesactivatePlayer());
-            }
+            animator.SetBool("readyToMove", true);
+            AudioManager.Instance.PlayClip(clip);
+            StartCoroutine(DesactivatePlayer());
         }
     }
 
@@ -36,7 +34,6 @@ public class TeleportMe : MonoBehaviour
             indication.SetActive(true);
             isInTeleporter = true;
             toTeleport = collision.gameObject;
-
         }
     }
 

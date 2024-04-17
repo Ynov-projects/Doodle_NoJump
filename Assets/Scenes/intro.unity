@@ -139,6 +139,58 @@ PrefabInstance:
       propertyPath: deathPanel
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5548233281238877808, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548233281238877808, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548233281238877808, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: f9900f27-69c4-46da-92cb-45d7cc417226
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548233281238877808, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: 1fb363fb-2759-4216-af6b-391426a74cde
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548233281238877808, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: Gameplay/Respawn[/Keyboard/c,/XInputControllerWindows/buttonNorth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548233281238877808, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: Gameplay/Interact[/Keyboard/e,/XInputControllerWindows/buttonWest]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548233281238877808, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548233281238877808, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548233281238877808, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1653728296}
+    - target: {fileID: 5548233281238877808, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548233281238877808, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnRespawnInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548233281238877808, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: currentSceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548233281238877808, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6274245329336405446, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -21919,9 +21971,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1608961534281303922, guid: 7bb57cf088d8a8e4da7408291e5b345d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1653728295}
-    - targetCorrespondingSourceObject: {fileID: 1608961534281303922, guid: 7bb57cf088d8a8e4da7408291e5b345d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1653728298}
   m_SourcePrefab: {fileID: 100100000, guid: 7bb57cf088d8a8e4da7408291e5b345d, type: 3}
 --- !u!1 &1653728294 stripped
 GameObject:
@@ -21944,16 +21993,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6c23f6c9b4756c047b9492eef9864bfe, type: 2}
   - {fileID: 11400000, guid: 16a8f53e6210a1e438cdbf0a4a2d6af0, type: 2}
   jumpPanel: {fileID: 0}
---- !u!114 &1653728298
+--- !u!114 &1653728296 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1178169626120079142, guid: 7bb57cf088d8a8e4da7408291e5b345d, type: 3}
+  m_PrefabInstance: {fileID: 1653728293}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653728294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bc9c1abc4cf6174a98785bc3025d512, type: 3}
+  m_Script: {fileID: 11500000, guid: 796cd50d16a43bd4a981fb8c199c7764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1683991495

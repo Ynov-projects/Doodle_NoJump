@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LevelDoor: MonoBehaviour
 {
@@ -15,9 +16,9 @@ public class LevelDoor: MonoBehaviour
         foreach(GameObject go in GameObject.FindGameObjectsWithTag("Level")) go.SetActive(false);
     }
 
-    private void Update()
+    public void OnInteractInput(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.E) && isInTrigger)
+        if (context.performed && isInTrigger)
         {
             animator.SetBool("readyToMove", true);
             PlayerMovement.instance.enabled = false;

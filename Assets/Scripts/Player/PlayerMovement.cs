@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
     private float verticalMovement;
-    
+
     public bool isJumping;
     public bool canJump;
 
@@ -27,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public ParticleSystem ParticleSystem1, ParticleSystem2;
     [SerializeField] private AudioClip clip;
 
-
+    private PlayerInput input;
 
     private void Awake()
     {
@@ -36,12 +37,15 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         instance = this;
+
+        input = new PlayerInput();
+        input.Gameplay.Enable();
     }
 
     void FixedUpdate()
     {
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
-        verticalMovement = Input.GetAxis("Vertical") * climbSpeed * Time.fixedDeltaTime;
+        //horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+        //verticalMovement = Input.GetAxis("Vertical") * climbSpeed * Time.fixedDeltaTime;
 
         // On met la local scale dans le sens du d�placement du personnage
         // Permet de mettre le sprite dans le sens de la marche du personnage
@@ -52,8 +56,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        isJumping = Input.GetKeyDown(KeyCode.Space) && canJump;
         MovePlayer(horizontalMovement, verticalMovement);
+
+        Vector2 RawMovementInput = input.Gameplay.Movement.ReadValue<Vector2>();
+        horizontalMovement = (int)(RawMovementInput * Vector2.right).normalized.x * moveSpeed;
+        verticalMovement = (int)(RawMovementInput * Vector2.up).normalized.y * climbSpeed;
+
+        if (input.Gameplay.Jumping.triggered) isJumping = canJump && collidings > 0;
     }
 
     void MovePlayer(float _horizontalMovement, float _verticalMovement)
@@ -65,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (isJumping && collidings > 0)
+            if (isJumping)
             {
                 rb.AddForce(new Vector2(0f, jumpForce));
                 isJumping = false;
@@ -93,6 +102,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(!collision.isTrigger) collidings--;
+        if (!collision.isTrigger) collidings--;
     }
 }
