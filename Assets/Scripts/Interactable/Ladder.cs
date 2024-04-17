@@ -9,16 +9,10 @@ public class Ladder : MonoBehaviour
     void Update()
     {
         Vector2 movement = GameManager.input.Gameplay.Movement.ReadValue<Vector2>();
-        if (movement.x > 0.3f)
-        {
-            PlayerMovement.instance.isClimbing = false;
-            return;
-        }
-
         if (movement.y > 0.1f && isInTrigger)
             PlayerMovement.instance.isClimbing = true;
-
-        if(!isInTrigger) PlayerMovement.instance.isClimbing = false;
+        if (movement.x > .5f && isInTrigger)
+            PlayerMovement.instance.isClimbing = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,6 +30,7 @@ public class Ladder : MonoBehaviour
         {
             indicationUpDown.SetActive(false);
             isInTrigger = false;
+            PlayerMovement.instance.isClimbing = false;
         }
     }
 }
