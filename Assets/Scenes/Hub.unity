@@ -326,6 +326,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 559783366908412932, guid: 772d6acec48dd0640bcaf931e70dbd91, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -168.71521
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205735387885751215, guid: 772d6acec48dd0640bcaf931e70dbd91, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -268.7152
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884366747922008069, guid: 772d6acec48dd0640bcaf931e70dbd91, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884366747922008069, guid: 772d6acec48dd0640bcaf931e70dbd91, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884366747922008069, guid: 772d6acec48dd0640bcaf931e70dbd91, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6931804503714822441, guid: 772d6acec48dd0640bcaf931e70dbd91, type: 3}
       propertyPath: m_Name
       value: UI
