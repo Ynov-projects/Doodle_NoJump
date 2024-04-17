@@ -4,6 +4,7 @@ public class WeakPoint : MonoBehaviour
 {
     public float bounceOnCollision;
     [SerializeField] private BoxCollider2D enemy;
+    [SerializeField] private AudioClip clip;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,6 +17,7 @@ public class WeakPoint : MonoBehaviour
         Vector3 targetVelocity = new Vector2(bounceOnCollision, rb.velocity.y);
         Vector3 velocity = Vector3.zero;
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .001f);
+        AudioManager.Instance.PlayClip(clip);
         Destroy(transform.parent.parent.gameObject);
     }
 }

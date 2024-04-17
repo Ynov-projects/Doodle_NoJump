@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     public static PlayerHealth Instance;
     [SerializeField] private GameObject deathPanel;
     [SerializeField] private GameObject lessLife;
+    [SerializeField] private AudioClip clip;
+    [SerializeField] private AudioClip clip2;
 
     private void Awake()
     {
@@ -30,6 +32,13 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= amount;
         lessLife.SetActive(true);
+        if (health > 0)
+        {
+            AudioManager.Instance.PlayClip(clip);
+        } if (health <= 0)
+        {
+            AudioManager.Instance.PlayClip(clip2);
+        };
         UpdateLife();
     }
 
@@ -37,6 +46,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health <= 0)
         {
+            AudioManager.Instance.PlayClip(clip2);
             PlayerMovement.instance.enabled = false;
             for (int i = 0; i < transform.childCount; i++)
                 if(transform.GetChild(i).tag == "LegPlayer") transform.GetChild(i).GetComponent<BoxCollider2D>().enabled = false;
