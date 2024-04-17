@@ -1,21 +1,11 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.Windows;
 
 public class SwitchLevel : MonoBehaviour
 {
     [SerializeField] private GameObject indication;
 
     private bool isInTrigger;
-
-    private PlayerInput input;
-
-    private void Awake()
-    {
-        input = new PlayerInput();
-        GameManager.input.Gameplay.Enable();
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
