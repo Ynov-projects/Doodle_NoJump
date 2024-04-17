@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject jumpPanel;
 
     public static PlayerInput input;
+    public static InputDevice lastDevice;
 
     private void Awake()
     {
@@ -21,7 +21,15 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        foreach(Item i in _items) i.Quantity = 0;
+        foreach (Item i in _items) i.Quantity = 0;
+
+        input.Gameplay.Get().actionTriggered +=
+            ctx => ChangeDevice(ctx);
+    }
+
+    private void ChangeDevice(InputAction.CallbackContext ctx)
+    {
+        lastDevice = ctx.control?.device;
     }
 
     private void Update()
@@ -32,7 +40,7 @@ public class GameManager : MonoBehaviour
             {
                 jumpPanel.SetActive(true);
             }
-            catch{}
+            catch { }
         }
     }
 }
