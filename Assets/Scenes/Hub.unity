@@ -330,6 +330,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 8151457533859034970, guid: 772d6acec48dd0640bcaf931e70dbd91, type: 3}
+      propertyPath: panels.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151457533859034970, guid: 772d6acec48dd0640bcaf931e70dbd91, type: 3}
+      propertyPath: panels.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8530343685766307088, guid: 772d6acec48dd0640bcaf931e70dbd91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.032708
@@ -411,6 +419,11 @@ MonoBehaviour:
 --- !u!1 &334676434 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 338881066538490579, guid: 772d6acec48dd0640bcaf931e70dbd91, type: 3}
+  m_PrefabInstance: {fileID: 334676430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &334676435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8962630419404536298, guid: 772d6acec48dd0640bcaf931e70dbd91, type: 3}
   m_PrefabInstance: {fileID: 334676430}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &392665772
@@ -65481,7 +65494,7 @@ MonoBehaviour:
   _items:
   - {fileID: 11400000, guid: 6c23f6c9b4756c047b9492eef9864bfe, type: 2}
   - {fileID: 11400000, guid: 16a8f53e6210a1e438cdbf0a4a2d6af0, type: 2}
-  jumpPanel: {fileID: 0}
+  jumpPanel: {fileID: 334676435}
 --- !u!1 &1286463838
 GameObject:
   m_ObjectHideFlags: 0

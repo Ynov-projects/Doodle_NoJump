@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class currentSceneManager : MonoBehaviour
 {
@@ -7,10 +8,15 @@ public class currentSceneManager : MonoBehaviour
     public static currentSceneManager instance;
     [SerializeField] private AudioClip clip;
 
+    private PlayerInput input;
+
     private void Awake()
     {
         if (instance != null) Destroy(gameObject);
         else instance = this;
+
+        input = new PlayerInput();
+        input.Gameplay.Enable();
     }
 
     private void Start()
@@ -20,10 +26,13 @@ public class currentSceneManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C) && Vector3.Distance(PlayerMovement.instance.transform.position, spawnPoint) >= 10f && spawnPoint != Vector3.zero && PlayerHealth.Instance.health > 0)
+        if (input.Gameplay.Respawn.triggered)
         {
-            PlayerMovement.instance.transform.position = spawnPoint;
-            AudioManager.Instance.PlayClip(clip);
+            if (Vector3.Distance(PlayerMovement.instance.transform.position, spawnPoint) >= 10f && spawnPoint != Vector3.zero && PlayerHealth.Instance.health > 0)
+            {
+                PlayerMovement.instance.transform.position = spawnPoint;
+                AudioManager.Instance.PlayClip(clip);
+            }
         }
     }
 }

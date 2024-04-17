@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class SwitchLevel : MonoBehaviour
@@ -19,9 +20,9 @@ public class SwitchLevel : MonoBehaviour
         indication.SetActive(false);
     }
 
-    private void Update()
+    public void OnInteractInput(InputAction.CallbackContext context)
     {
-        if(Input.GetKeyDown(KeyCode.E) && isInTrigger) ChangeScene();
+        if (context.performed && isInTrigger) ChangeScene();
     }
 
     public void ChangeScene()

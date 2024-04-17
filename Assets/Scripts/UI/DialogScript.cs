@@ -3,6 +3,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class DialogScript : MonoBehaviour
 {
@@ -26,14 +27,14 @@ public class DialogScript : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
-    void Update()
+    public void OnTalkInput(InputAction.CallbackContext context)
     {
-        if ((Input.GetKeyDown(KeyCode.E) || automaticLaunching) && isInRange && !dialogLaunched)
+        if ((context.performed || automaticLaunching) && isInRange && !dialogLaunched)
         {
             dialogLaunched = true;
             LaunchDialog();
         }
-        if (Input.GetKeyDown(KeyCode.E) && dialogLaunched) StopDialog();
+        else if (context.performed && dialogLaunched) StopDialog();
     }
 
     private void ManageAnimation(bool activation)
