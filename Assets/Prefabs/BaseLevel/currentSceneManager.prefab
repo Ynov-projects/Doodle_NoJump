@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9021953915466631642}
   - component: {fileID: 1178169626120079142}
-  - component: {fileID: 6135288089167706190}
+  - component: {fileID: 7836942283285999169}
   m_Layer: 0
   m_Name: currentSceneManager
   m_TagString: Untagged
@@ -47,7 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {x: 0, y: 0, z: 0}
   clip: {fileID: 8300000, guid: e0891b7e63550f64d8c6f167e8cbe910, type: 3}
---- !u!114 &6135288089167706190
+  pauseMenu: {fileID: 0}
+--- !u!114 &7836942283285999169
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
