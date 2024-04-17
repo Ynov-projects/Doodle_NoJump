@@ -16,9 +16,9 @@ public class LevelDoor: MonoBehaviour
         foreach(GameObject go in GameObject.FindGameObjectsWithTag("Level")) go.SetActive(false);
     }
 
-    public void OnInteractInput(InputAction.CallbackContext context)
+    private void Update()
     {
-        if (context.performed && isInTrigger)
+        if (GameManager.input.Gameplay.Interact.triggered && isInTrigger)
         {
             animator.SetBool("readyToMove", true);
             PlayerMovement.instance.enabled = false;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
             gameObject.SetActive(false);
 
             deathPanel.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(deathPanel.transform.GetChild(0).gameObject);
         }
         HealthDisplay.instance.ChangeHealth();
     }

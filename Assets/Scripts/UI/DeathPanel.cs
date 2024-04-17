@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class DeathPanel : MonoBehaviour
@@ -10,6 +11,6 @@ public class DeathPanel : MonoBehaviour
 
     public void OnQuitClick()
     {
-        Application.Quit();
+            Application.Quit();
     }
 }

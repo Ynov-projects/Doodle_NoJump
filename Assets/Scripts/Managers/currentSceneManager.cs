@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class currentSceneManager : MonoBehaviour
@@ -30,8 +31,9 @@ public class currentSceneManager : MonoBehaviour
                 AudioManager.Instance.PlayClip(clip);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && pauseMenu != null)
+        if (GameManager.input.Gameplay.Pause.triggered && pauseMenu != null)
         {
+            EventSystem.current.SetSelectedGameObject(pauseMenu.transform.GetChild(0).gameObject);
             pauseMenu.Pause();
             Time.timeScale = 0;
         }
