@@ -11,6 +11,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject jumpPanel;
 
+    public static PlayerInput input;
+
+    private void Awake()
+    {
+        input = new PlayerInput();
+        input.Gameplay.Enable();
+    }
+
     void Start()
     {
         foreach(Item i in _items) i.Quantity = 0;

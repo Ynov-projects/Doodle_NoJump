@@ -27,14 +27,14 @@ public class DialogScript : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
-    public void OnTalkInput(InputAction.CallbackContext context)
+    private void Update()
     {
-        if ((context.performed || automaticLaunching) && isInRange && !dialogLaunched)
+        if ((GameManager.input.Gameplay.Interact.triggered || automaticLaunching) && isInRange && !dialogLaunched)
         {
             dialogLaunched = true;
             LaunchDialog();
         }
-        else if (context.performed && dialogLaunched) StopDialog();
+        else if (GameManager.input.Gameplay.Interact.triggered && dialogLaunched) StopDialog();
     }
 
     private void ManageAnimation(bool activation)
@@ -47,7 +47,6 @@ public class DialogScript : MonoBehaviour
     {
         if (collision.tag == "Player" && collision.tag != "Untagged")
         {
-            Debug.Log(collision.gameObject.name);
             ManageAnimation(true);
             isInRange = true;
         }

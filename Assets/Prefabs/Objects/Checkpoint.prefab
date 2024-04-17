@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indication: {fileID: 3500292798752032698}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: e0891b7e63550f64d8c6f167e8cbe910, type: 3}
 --- !u!61 &4030027527081621736
 BoxCollider2D:
   m_ObjectHideFlags: 0

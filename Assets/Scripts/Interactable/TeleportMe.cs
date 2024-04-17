@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 public class TeleportMe : MonoBehaviour
 {
@@ -17,9 +18,9 @@ public class TeleportMe : MonoBehaviour
 
     [SerializeField] private AudioClip clip;
 
-    public void OnInteractInput(InputAction.CallbackContext context)
+    private void Update()
     {
-        if (context.performed && isInTeleporter)
+        if (GameManager.input.Gameplay.Interact.triggered && isInTeleporter)
         {
             animator.SetBool("readyToMove", true);
             AudioManager.Instance.PlayClip(clip);

@@ -8,16 +8,15 @@ public class Ladder : MonoBehaviour
 
     void Update()
     {
-        if (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.3f)
+        Vector2 movement = GameManager.input.Gameplay.Movement.ReadValue<Vector2>();
+        if (movement.x > 0.3f)
         {
             PlayerMovement.instance.isClimbing = false;
             return;
         }
 
-        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f && isInTrigger)
-        {
+        if (movement.y > 0.1f && isInTrigger)
             PlayerMovement.instance.isClimbing = true;
-        }
 
         if(!isInTrigger) PlayerMovement.instance.isClimbing = false;
     }
