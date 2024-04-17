@@ -1,12 +1,21 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Windows;
 
 public class SwitchLevel : MonoBehaviour
 {
     [SerializeField] private GameObject indication;
 
     private bool isInTrigger;
+
+    private PlayerInput input;
+
+    private void Awake()
+    {
+        input = new PlayerInput();
+        GameManager.input.Gameplay.Enable();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,9 +29,9 @@ public class SwitchLevel : MonoBehaviour
         indication.SetActive(false);
     }
 
-    public void OnInteractInput(InputAction.CallbackContext context)
+    private void Update()
     {
-        if (context.performed && isInTrigger) ChangeScene();
+        if (GameManager.input.Gameplay.Interact.triggered && isInTrigger) ChangeScene();
     }
 
     public void ChangeScene()

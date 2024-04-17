@@ -9,15 +9,10 @@ public class currentSceneManager : MonoBehaviour
     [SerializeField] private AudioClip clip;
     [SerializeField] private PauseMenu pauseMenu;
 
-    private PlayerInput input;
-
     private void Awake()
     {
         if (instance != null) Destroy(gameObject);
         else instance = this;
-
-        input = new PlayerInput();
-        input.Gameplay.Enable();
     }
 
     private void Start()
@@ -27,7 +22,7 @@ public class currentSceneManager : MonoBehaviour
 
     private void Update()
     {
-        if (input.Gameplay.Respawn.triggered)
+        if (GameManager.input.Gameplay.Respawn.triggered)
         {
             if (Vector3.Distance(PlayerMovement.instance.transform.position, spawnPoint) >= 10f && spawnPoint != Vector3.zero && PlayerHealth.Instance.health > 0)
             {

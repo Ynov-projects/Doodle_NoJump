@@ -17,12 +17,6 @@ public class UIManager : MonoBehaviour
         Instance = this;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-            UpdateUI();
-    }
-
     public void UpdateUI()
     {
         for (int i = 0; i < panels.Length; i++)
