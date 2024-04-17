@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         MovePlayer(horizontalMovement, verticalMovement);
-
         Vector2 RawMovementInput = input.Gameplay.Movement.ReadValue<Vector2>();
         horizontalMovement = (int)(RawMovementInput * Vector2.right).normalized.x * moveSpeed;
         verticalMovement = (int)(RawMovementInput * Vector2.up).normalized.y * climbSpeed;
