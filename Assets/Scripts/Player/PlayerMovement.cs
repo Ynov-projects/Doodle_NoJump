@@ -28,8 +28,6 @@ public class PlayerMovement : MonoBehaviour
     public ParticleSystem ParticleSystem1, ParticleSystem2;
     [SerializeField] private AudioClip clip;
 
-    private PlayerInput input;
-
     private void Awake()
     {
         if (instance != null)
@@ -37,9 +35,6 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         instance = this;
-
-        input = new PlayerInput();
-        input.Gameplay.Enable();
     }
 
     void FixedUpdate()
@@ -57,11 +52,11 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         MovePlayer(horizontalMovement, verticalMovement);
-        Vector2 RawMovementInput = input.Gameplay.Movement.ReadValue<Vector2>();
+        Vector2 RawMovementInput = GameManager.input.Gameplay.Movement.ReadValue<Vector2>();
         horizontalMovement = (int)(RawMovementInput * Vector2.right).normalized.x * moveSpeed;
         verticalMovement = (int)(RawMovementInput * Vector2.up).normalized.y * climbSpeed;
 
-        if (input.Gameplay.Jumping.triggered) isJumping = canJump && collidings > 0;
+        if (GameManager.input.Gameplay.Jumping.triggered) isJumping = canJump && collidings > 0;
     }
 
     void MovePlayer(float _horizontalMovement, float _verticalMovement)
