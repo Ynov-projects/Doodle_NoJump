@@ -4,6 +4,9 @@ public class ButtonFallCube : MonoBehaviour
 {
     public GameObject fallCube;
 
+    [SerializeField] private ParticleSystem ps1;
+    [SerializeField] private ParticleSystem ps2;
+
     public void activate()
     {
         GetComponent<SpriteRenderer>().color = GameManager.activeColor;
@@ -14,5 +17,11 @@ public class ButtonFallCube : MonoBehaviour
     {
         // GetComponent<SpriteRenderer>().color = Color.blue;
         // fallCube.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        ps1.Play();
+        ps2.Play();
     }
 }
