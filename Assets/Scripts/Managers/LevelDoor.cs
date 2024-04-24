@@ -49,6 +49,7 @@ public class LevelDoor: MonoBehaviour
     {
         animator.SetBool("readyToMove", false);
         PlayerMovement.instance.gameObject.transform.position = Vector3.zero;
+        currentSceneManager.instance.spawnPoint = Vector3.zero;
         PlayerMovement.instance.enabled = true;
         DesactivateLevels();
     }

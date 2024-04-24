@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f52910b6e4117f2448795ee0bd94da6c, type: 3}
-  m_Name: Key
+  m_Name: Big Key
   m_EditorClassIdentifier: 
-  id: 2
-  object_name: Key
-  icon: {fileID: -1923779314, guid: 2dd3dad0c835492419a0c4d8359fb89a, type: 3}
+  id: 3
+  object_name: Big key
+  icon: {fileID: 724484080, guid: cb6cf44ae51a3b64dbc2ee876b04f7c1, type: 3}
   Quantity: 0

@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     public bool isClimbing;
 
     public Rigidbody2D rb;
-    private Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
     private float verticalMovement;
 
@@ -27,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     public ParticleSystem ParticleSystem1, ParticleSystem2;
     [SerializeField] private AudioClip clip;
+    [SerializeField] private Animator cameraAnimator;
 
     private void Awake()
     {
@@ -56,7 +56,15 @@ public class PlayerMovement : MonoBehaviour
         horizontalMovement = (int)(RawMovementInput * Vector2.right).normalized.x * moveSpeed;
         verticalMovement = (int)(RawMovementInput * Vector2.up).normalized.y * climbSpeed;
 
-        if (GameManager.input.Gameplay.Jumping.triggered) isJumping = canJump && collidings > 0;
+        if (GameManager.input.Gameplay.Jumping.triggered)
+            if (canJump) isJumping = collidings > 0;
+            else
+            {
+                isJumping = false;
+                // Shake the cam
+                cameraAnimator.SetTrigger("shake");
+                // RYAN PENSE A METTRE LE SON ICI
+            }
     }
 
     void MovePlayer(float _horizontalMovement, float _verticalMovement)
