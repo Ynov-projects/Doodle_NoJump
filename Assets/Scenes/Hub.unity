@@ -507,13 +507,13 @@ Transform:
   m_GameObject: {fileID: 392665772}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 48, y: -205, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1010492275}
   - {fileID: 1500110987}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 700678693}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &398072320
 GameObject:
@@ -671,22 +671,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 386686391780334185, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
-      propertyPath: clip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 386686391780334185, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
-      propertyPath: climbSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944218664975853274, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
-      propertyPath: clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 98141db0ceb358f44be4b08f0e03c67e, type: 3}
-    - target: {fileID: 2944218664975853274, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
-      propertyPath: clip2
-      value: 
-      objectReference: {fileID: 8300000, guid: 6fc52fb6decbda043b94f17a7d09ef7b, type: 3}
     - target: {fileID: 2944218664975853274, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
       propertyPath: lessLife
       value: 
@@ -695,10 +679,6 @@ PrefabInstance:
       propertyPath: deathPanel
       value: 
       objectReference: {fileID: 1680492598}
-    - target: {fileID: 3616005752995291633, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 6274245329336405446, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -48
@@ -755,18 +735,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 9100401345948501745, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6274245329336405446, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 392665774}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
 --- !u!1 &700678683 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9100401345948501745, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
+  m_PrefabInstance: {fileID: 700678682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &700678693 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6274245329336405446, guid: b2c2ded25d8fd7141b15bc04edeb0edc, type: 3}
   m_PrefabInstance: {fileID: 700678682}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &711990870 stripped
@@ -65405,6 +65389,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1815463778139760225, guid: 00e84b19646dd034da30e71c0ebae788, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 60f7be99963a0f443b57a33682579f07, type: 3}
     - target: {fileID: 2944374241758361634, guid: 00e84b19646dd034da30e71c0ebae788, type: 3}
       propertyPath: m_Name
       value: Level 1
@@ -68650,7 +68638,6 @@ SceneRoots:
   - {fileID: 1286463843}
   - {fileID: 1609340619}
   - {fileID: 700678682}
-  - {fileID: 392665774}
   - {fileID: 5806067489783068077}
   - {fileID: 58988280}
   - {fileID: 1611209355}
