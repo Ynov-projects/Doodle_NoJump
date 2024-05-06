@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounceOnCollision: 10
   enemy: {fileID: 1265255522262978863}
+  clip: {fileID: 8300000, guid: 60f7be99963a0f443b57a33682579f07, type: 3}
 --- !u!1 &4139465538216005418
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c079e3ffcb255eb4cb06420bafa769ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
   damage: 1
 --- !u!1 &8257988809395453259
 GameObject:
