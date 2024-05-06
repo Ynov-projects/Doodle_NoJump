@@ -9,11 +9,17 @@ public class Indication : MonoBehaviour
 
     void Start()
     {
-        sprite.sprite = GameManager.lastDevice.name == "" || GameManager.lastDevice.name == "Keyboard" ? keyboardSprite : gamepadSprite;
+        if (GameManager.lastDevice == null)
+            sprite.sprite = keyboardSprite;
+        else
+            sprite.sprite = GameManager.lastDevice.name == "" || GameManager.lastDevice.name == "Keyboard" ? keyboardSprite : gamepadSprite;
     }
 
     void FixedUpdate()
     {
-        sprite.sprite = GameManager.lastDevice.name == "" || GameManager.lastDevice.name == "Keyboard" ? keyboardSprite : gamepadSprite;
+        if (GameManager.lastDevice == null)
+            sprite.sprite = keyboardSprite;
+        else
+            sprite.sprite = GameManager.lastDevice.name == "" || GameManager.lastDevice.name == "Keyboard" ? keyboardSprite : gamepadSprite;
     }
 }
