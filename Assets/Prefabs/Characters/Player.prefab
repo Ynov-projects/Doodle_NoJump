@@ -10120,7 +10120,8 @@ MonoBehaviour:
   animator: {fileID: 9069023178259323002}
   ParticleSystem1: {fileID: 4696801454460782580}
   ParticleSystem2: {fileID: 112455465702123267}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 9131eb7950a3dda44ad037ee8cd35715, type: 3}
+  cameraAnimator: {fileID: 0}
 --- !u!95 &9069023178259323002
 Animator:
   serializedVersion: 5
@@ -10230,6 +10231,8 @@ MonoBehaviour:
   maxHealth: 3
   deathPanel: {fileID: 0}
   lessLife: {fileID: 0}
+  clip: {fileID: 0}
+  clip2: {fileID: 0}
 --- !u!114 &7308524275192354117
 MonoBehaviour:
   m_ObjectHideFlags: 0
