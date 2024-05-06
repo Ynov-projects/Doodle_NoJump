@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 
 public class currentSceneManager : MonoBehaviour
 {
@@ -9,6 +8,9 @@ public class currentSceneManager : MonoBehaviour
     public static currentSceneManager instance;
     [SerializeField] private AudioClip clip;
     [SerializeField] private PauseMenu pauseMenu;
+
+    public bool speedrunMode;
+    public float startTime;
 
     private void Awake()
     {
