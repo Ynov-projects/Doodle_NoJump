@@ -20,9 +20,9 @@ public class LevelDoor: MonoBehaviour
     {
         if (GameManager.input.Gameplay.Interact.triggered && isInTrigger)
         {
+            PlayerMovement.instance.StopPlayer();
             animator.SetBool("readyToMove", true);
-            PlayerMovement.instance.enabled = false;
-            PlayerMovement.instance.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            currentSceneManager.instance.canTeleport = false;
             AudioManager.Instance.PlayClip(clip);
         }
     }
@@ -51,6 +51,7 @@ public class LevelDoor: MonoBehaviour
         PlayerMovement.instance.gameObject.transform.position = Vector3.zero;
         currentSceneManager.instance.spawnPoint = Vector3.zero;
         PlayerMovement.instance.enabled = true;
+        currentSceneManager.instance.canTeleport = true;
         DesactivateLevels();
     }
 }

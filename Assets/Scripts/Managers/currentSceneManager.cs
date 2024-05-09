@@ -9,8 +9,7 @@ public class currentSceneManager : MonoBehaviour
     [SerializeField] private AudioClip clip;
     [SerializeField] private PauseMenu pauseMenu;
 
-    public bool speedrunMode;
-    public float startTime;
+    public bool canTeleport = true;
 
     private void Awake()
     {
@@ -27,8 +26,9 @@ public class currentSceneManager : MonoBehaviour
     {
         if (GameManager.input.Gameplay.Respawn.triggered)
         {
-            if (Vector3.Distance(PlayerMovement.instance.transform.position, spawnPoint) >= 10f && spawnPoint != Vector3.zero && PlayerHealth.Instance.health > 0)
+            if (Vector3.Distance(PlayerMovement.instance.transform.position, spawnPoint) >= 10f && spawnPoint != Vector3.zero && PlayerHealth.Instance.health > 0 && canTeleport)
             {
+                PlayerMovement.instance.enabled = true;
                 PlayerMovement.instance.transform.position = spawnPoint;
                 AudioManager.Instance.PlayClip(clip);
             }

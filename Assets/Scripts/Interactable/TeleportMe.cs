@@ -22,9 +22,10 @@ public class TeleportMe : MonoBehaviour
     {
         if (GameManager.input.Gameplay.Interact.triggered && isInTeleporter)
         {
+            PlayerMovement.instance.StopPlayer();
+            currentSceneManager.instance.canTeleport = false;
             animator.SetBool("readyToMove", true);
             AudioManager.Instance.PlayClip(clip);
-            StartCoroutine(DesactivatePlayer());
         }
     }
 
@@ -44,6 +45,7 @@ public class TeleportMe : MonoBehaviour
 
         toTeleport.GetComponent<PlayerMovement>().enabled = true;
         toTeleport.transform.position = teleportPosition.transform.position;
+        currentSceneManager.instance.canTeleport = true;
         animator.SetBool("readyToMove", false);
     }
 
@@ -55,12 +57,5 @@ public class TeleportMe : MonoBehaviour
             isInTeleporter = false;
             animator.SetBool("readyToMove", false);
         }
-    }
-
-    private IEnumerator DesactivatePlayer()
-    {
-        toTeleport.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-        yield return new WaitForEndOfFrame();
-        toTeleport.GetComponent<PlayerMovement>().enabled = false;
     }
 }

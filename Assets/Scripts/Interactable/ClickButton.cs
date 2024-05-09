@@ -22,7 +22,6 @@ public class ClickButton : MonoBehaviour
             else
                 desactivateEvents();
             activated = switchable ? !activated : false;
-            AudioManager.Instance.PlayClip(clip);
         }
     }
 
@@ -38,13 +37,21 @@ public class ClickButton : MonoBehaviour
 
     private void activateEvents()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = GameManager.activeColor;
-        activate.Invoke();
+        if (gameObject.GetComponent<SpriteRenderer>().color != GameManager.activeColor)
+        {
+            AudioManager.Instance.PlayClip(clip);
+            gameObject.GetComponent<SpriteRenderer>().color = GameManager.activeColor;
+            activate.Invoke();
+        }
     }
 
     private void desactivateEvents()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = GameManager.inactiveColor;
-        desactivate.Invoke();
+        if (gameObject.GetComponent<SpriteRenderer>().color != GameManager.inactiveColor)
+        {
+            AudioManager.Instance.PlayClip(clip);
+            gameObject.GetComponent<SpriteRenderer>().color = GameManager.inactiveColor;
+            desactivate.Invoke();
+        }
     }
 }

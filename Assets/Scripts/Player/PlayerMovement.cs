@@ -102,6 +102,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void StopPlayer()
+    {
+        rb.velocity = Vector3.zero;
+        animator.SetFloat("Speed", 0);
+        enabled = false;
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.isTrigger) collidings--;
