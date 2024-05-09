@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     public ParticleSystem ParticleSystem1, ParticleSystem2;
     [SerializeField] private AudioClip clip;
+    [SerializeField] private AudioClip clipSpace;
     [SerializeField] private Animator cameraAnimator;
 
     private void Awake()
@@ -63,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
                 isJumping = false;
                 // Shake the cam
                 cameraAnimator.SetTrigger("shake");
-                // RYAN PENSE A METTRE LE SON ICI
+                AudioManager.Instance.PlayClip(clipSpace);
             }
     }
 

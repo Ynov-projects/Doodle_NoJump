@@ -10121,6 +10121,7 @@ MonoBehaviour:
   ParticleSystem1: {fileID: 4696801454460782580}
   ParticleSystem2: {fileID: 112455465702123267}
   clip: {fileID: 8300000, guid: 9131eb7950a3dda44ad037ee8cd35715, type: 3}
+  clipSpace: {fileID: 8300000, guid: 4edb0c5b36e008240a262dcad19542cc, type: 3}
   cameraAnimator: {fileID: 0}
 --- !u!95 &9069023178259323002
 Animator:
