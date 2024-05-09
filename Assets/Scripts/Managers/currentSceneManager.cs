@@ -9,7 +9,7 @@ public class currentSceneManager : MonoBehaviour
     [SerializeField] private AudioClip clip;
     [SerializeField] private PauseMenu pauseMenu;
 
-    public bool canTeleport = true;
+    public bool canTeleport;
 
     private void Awake()
     {
@@ -19,6 +19,7 @@ public class currentSceneManager : MonoBehaviour
 
     private void Start()
     {
+        canTeleport = true;
         spawnPoint = GameObject.FindGameObjectWithTag("Player").transform.position;
     }
 
