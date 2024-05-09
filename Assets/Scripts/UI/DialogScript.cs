@@ -93,6 +93,7 @@ public class DialogScript : MonoBehaviour
     private void StopDialog()
     {
         SwitchingState(false);
+        PlayerMovement.instance.enabled = true;
         StopAllCoroutines();
         AudioManager.Instance.StopDialog();
 

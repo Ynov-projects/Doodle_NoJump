@@ -21,9 +21,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.DeleteKey("speedRun");
-        PlayerPrefs.SetInt("speedRun", 0);
-        PlayerPrefs.Save();
+        if (!PlayerPrefs.HasKey("speedRun"))
+        {
+            PlayerPrefs.DeleteKey("speedRun");
+            PlayerPrefs.SetInt("speedRun", 0);
+            PlayerPrefs.Save();
+        }
 
         foreach (Item i in _items) i.Quantity = 0;
 

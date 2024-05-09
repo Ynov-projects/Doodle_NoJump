@@ -32,6 +32,7 @@ public class EndGame : MonoBehaviour
 
     private IEnumerator UpdateTimer()
     {
+        Debug.Log(PlayerPrefs.GetInt("speedRun") == 1);
         while (PlayerPrefs.GetInt("speedRun") == 1)
         {
             timeElapsed += Time.deltaTime;
@@ -44,6 +45,9 @@ public class EndGame : MonoBehaviour
     {
         if (collision.tag == "Player" && PlayerPrefs.GetInt("speedRun") == 1)
         {
+            PlayerPrefs.DeleteKey("speedRun");
+            PlayerPrefs.Save();
+
             newBestScore = (int) getTimeElapsed();
             PlayerMovement.instance.rb.velocity = Vector3.zero;
             PlayerMovement.instance.enabled = false;
