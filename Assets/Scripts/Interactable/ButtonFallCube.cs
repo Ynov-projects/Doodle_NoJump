@@ -4,8 +4,7 @@ public class ButtonFallCube : MonoBehaviour
 {
     public GameObject fallCube;
 
-    [SerializeField] private ParticleSystem ps1;
-    [SerializeField] private ParticleSystem ps2;
+    [SerializeField] private ParticleSystem ps;
 
     public void activate()
     {
@@ -21,7 +20,6 @@ public class ButtonFallCube : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        ps1.Play();
-        ps2.Play();
+        ps.Play();
     }
 }

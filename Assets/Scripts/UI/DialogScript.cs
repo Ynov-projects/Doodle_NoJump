@@ -63,9 +63,9 @@ public class DialogScript : MonoBehaviour
 
     private void LaunchDialog()
     {
+        PlayerMovement.instance.StopPlayer();
         SwitchingState(true);
         AudioManager.Instance.PlayDialog(dialog);
-        if(!automaticLaunching) PlayerMovement.instance.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         dialogTextContent.text = "";
         dialogTextName.text = dialogName;
         char[] letters = dialogContent.ToCharArray();
@@ -77,7 +77,7 @@ public class DialogScript : MonoBehaviour
     {
         dialogPanel.SetActive(state);
         ManageAnimation(!state);
-        PlayerMovement.instance.enabled = !state;
+        currentSceneManager.instance.canTeleport = !state;
     }
 
     private IEnumerator WriteDialog(char[] letters)
