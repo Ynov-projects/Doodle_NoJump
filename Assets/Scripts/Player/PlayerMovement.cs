@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -103,9 +99,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void StopPlayer()
+    public void StopPlayer(bool legbreaker = false)
     {
-        rb.velocity = Vector3.zero;
+        rb.velocity = legbreaker ? new Vector3(0,rb.velocity.y,0) : Vector3.zero;
         animator.SetFloat("Speed", 0);
         enabled = false;
     }

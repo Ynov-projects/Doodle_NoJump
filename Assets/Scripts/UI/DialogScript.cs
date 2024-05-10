@@ -63,7 +63,7 @@ public class DialogScript : MonoBehaviour
 
     private void LaunchDialog()
     {
-        PlayerMovement.instance.StopPlayer();
+        PlayerMovement.instance.StopPlayer(true);
         SwitchingState(true);
         AudioManager.Instance.PlayDialog(dialog);
         dialogTextContent.text = "";

@@ -15,13 +15,15 @@ public class TeleportMe : MonoBehaviour
     [SerializeField] private Animator animator;
 
     [SerializeField] private GameObject level;
-
     [SerializeField] private AudioClip clip;
+
+    private bool teleporting;
 
     private void Update()
     {
         if (GameManager.input.Gameplay.Interact.triggered && isInTeleporter)
         {
+            teleporting = true;
             PlayerMovement.instance.StopPlayer();
             currentSceneManager.instance.canTeleport = false;
             animator.SetBool("readyToMove", true);
@@ -41,6 +43,7 @@ public class TeleportMe : MonoBehaviour
 
     public void Teleport()
     {
+        teleporting = false;
         if (level != null) level.SetActive(true);
 
         toTeleport.GetComponent<PlayerMovement>().enabled = true;
@@ -51,7 +54,7 @@ public class TeleportMe : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && !teleporting)
         {
             indication.SetActive(false);
             isInTeleporter = false;
