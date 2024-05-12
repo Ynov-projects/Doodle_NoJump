@@ -34,7 +34,7 @@ public class TrampolineScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "Player" && bounceTrampoline.activeSelf)
         {
             animator.SetBool("isOn", true);
             AudioManager.Instance.PlayClip(clip);
