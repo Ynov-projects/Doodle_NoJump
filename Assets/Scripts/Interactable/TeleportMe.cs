@@ -44,6 +44,7 @@ public class TeleportMe : MonoBehaviour
     public void Teleport()
     {
         teleporting = false;
+        isInTeleporter = false;
         if (level != null) level.SetActive(true);
 
         toTeleport.GetComponent<PlayerMovement>().enabled = true;

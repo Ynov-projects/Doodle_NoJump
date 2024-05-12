@@ -8,13 +8,16 @@ public class ElevatorAutoChild : MonoBehaviour
     [SerializeField] private AudioMixerSnapshot mainMusic;
     [SerializeField] private AudioMixerSnapshot elevator;
 
+    [SerializeField] private AudioClip finalMusic;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.parent != transform)
         {
+            if (finalMusic != null) AudioManager.Instance.ChangeMusic(finalMusic);
             if (collision.tag == "LegPlayer") collision.transform.parent.parent = transform;
             else if (collision.tag != "Player") collision.transform.parent = transform;
-            if (collision.tag == "Player" || collision.tag == "LegPlayer") SwitchMusic(true);
+            if ((collision.tag == "Player" || collision.tag == "LegPlayer") && finalMusic == null) SwitchMusic(true);
         }
     }
 
@@ -30,7 +33,7 @@ public class ElevatorAutoChild : MonoBehaviour
         {
             if (collision.tag == "LegPlayer") collision.transform.parent.parent = null;
             else if (collision.tag != "Player") collision.transform.parent = null;
-            if (collision.tag == "Player" || collision.tag == "LegPlayer") SwitchMusic(false);
+            if ((collision.tag == "Player" || collision.tag == "LegPlayer")  && finalMusic == null) SwitchMusic(false);
         }
     }
 }
