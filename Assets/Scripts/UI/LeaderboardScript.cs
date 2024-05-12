@@ -8,6 +8,11 @@ public class LeaderboardScript : MonoBehaviour
     [SerializeField] private GameObject UIElement0;
     [SerializeField] private GameObject UIElement;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P)) PlayerPrefs.DeleteAll();
+    }
+
     void Start()
     {
         // Ici, on ajoute les clefs de base s'il n'y en a pas

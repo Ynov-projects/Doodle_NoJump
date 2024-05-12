@@ -32,7 +32,6 @@ public class EndGame : MonoBehaviour
 
     private IEnumerator UpdateTimer()
     {
-        Debug.Log(PlayerPrefs.GetInt("speedRun") == 1);
         while (PlayerPrefs.GetInt("speedRun") == 1)
         {
             timeElapsed += Time.deltaTime;
@@ -53,6 +52,10 @@ public class EndGame : MonoBehaviour
             PlayerMovement.instance.enabled = false;
             gameManager.StopAllCoroutines();
             pnlPseudo.SetActive(true);
+        }
+        else if(collision.tag == "Player")
+        {
+            SceneManager.LoadScene("intro");
         }
     }
 
