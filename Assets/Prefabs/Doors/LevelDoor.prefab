@@ -365,6 +365,22 @@ PrefabInstance:
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: 02c425198d1484f43811443ef78931f0, type: 3}
+    - target: {fileID: 6199268415513060523, guid: 0d63560b8a75d3a4ebb5bd565d2f5433, type: 3}
+      propertyPath: destroyedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199268415513060523, guid: 0d63560b8a75d3a4ebb5bd565d2f5433, type: 3}
+      propertyPath: destroyedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1178169626120079142, guid: 7bb57cf088d8a8e4da7408291e5b345d, type: 3}
+    - target: {fileID: 6199268415513060523, guid: 0d63560b8a75d3a4ebb5bd565d2f5433, type: 3}
+      propertyPath: destroyedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnlightAutel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6199268415513060523, guid: 0d63560b8a75d3a4ebb5bd565d2f5433, type: 3}
+      propertyPath: destroyedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: currentSceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6524716629012208894, guid: 0d63560b8a75d3a4ebb5bd565d2f5433, type: 3}
       propertyPath: m_Name
       value: Big Key

@@ -11,6 +11,8 @@ public class currentSceneManager : MonoBehaviour
 
     public bool canTeleport;
 
+    [SerializeField] private SpriteRenderer[] autels;
+
     private void Awake()
     {
         if (instance != null) Destroy(gameObject);
@@ -36,9 +38,14 @@ public class currentSceneManager : MonoBehaviour
         }
         if (GameManager.input.Gameplay.Pause.triggered && pauseMenu != null)
         {
-            EventSystem.current.SetSelectedGameObject(pauseMenu.transform.GetChild(0).gameObject);
+            if(GameManager.lastDevice.name != "Keyboard") EventSystem.current.SetSelectedGameObject(pauseMenu.transform.GetChild(0).gameObject);
             pauseMenu.Pause();
             Time.timeScale = 0;
         }
+    }
+
+    public void EnlightAutel(int levelNumber)
+    {
+        autels[levelNumber].color = GameManager.activeColor;
     }
 }

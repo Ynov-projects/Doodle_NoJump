@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource soundSource;
     [SerializeField] private AudioSource dialogSource;
 
@@ -11,6 +12,15 @@ public class AudioManager : MonoBehaviour
     {
         if (Instance != null) Destroy(gameObject);
         Instance = this;
+    }
+
+    public void ChangeMusic(AudioClip clip)
+    {
+        if (musicSource != null)
+        {
+            musicSource.clip = clip;
+            musicSource.Play();
+        }
     }
 
     public void PlayClip(AudioClip clip)
