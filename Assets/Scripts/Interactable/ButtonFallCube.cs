@@ -14,8 +14,8 @@ public class ButtonFallCube : MonoBehaviour
 
     public void desactivate()
     {
-        // GetComponent<SpriteRenderer>().color = Color.blue;
-        // fallCube.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+        GetComponent<SpriteRenderer>().color = Color.blue;
+        fallCube.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

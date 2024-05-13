@@ -32,8 +32,8 @@ public class ElevatorAutoChild : MonoBehaviour
         if (collision.transform.parent != transform)
         {
             if (collision.tag == "LegPlayer") collision.transform.parent.parent = null;
-            else if (collision.tag != "Player") collision.transform.parent = null;
-            if ((collision.tag == "Player" || collision.tag == "LegPlayer")  && finalMusic == null) SwitchMusic(false);
         }
+        else if (collision.tag != "Player") collision.transform.parent = null;
+        if ((collision.tag == "Player" || collision.tag == "LegPlayer") && finalMusic == null) SwitchMusic(false);
     }
 }
