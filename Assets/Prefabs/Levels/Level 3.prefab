@@ -39407,6 +39407,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2082731435270988037}
     m_Modifications:
     - target: {fileID: 5273312659689387709, guid: 10ac8b5ad745766419926814128b96e5, type: 3}
+      propertyPath: destroyedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5273312659689387709, guid: 10ac8b5ad745766419926814128b96e5, type: 3}
       propertyPath: destroyedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
       objectReference: {fileID: 0}
@@ -39897,7 +39901,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 207749758245565874, guid: ae2f43a3584c8744e8312759264fd9bd, type: 3}
       propertyPath: permanent
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 207749758245565874, guid: ae2f43a3584c8744e8312759264fd9bd, type: 3}
+      propertyPath: desactivate.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 207749758245565874, guid: ae2f43a3584c8744e8312759264fd9bd, type: 3}
       propertyPath: activate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
