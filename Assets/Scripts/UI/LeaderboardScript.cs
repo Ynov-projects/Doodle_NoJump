@@ -10,7 +10,7 @@ public class LeaderboardScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) PlayerPrefs.DeleteAll();
+        //if (Input.GetKeyDown(KeyCode.P)) PlayerPrefs.DeleteAll();
     }
 
     void Start()
